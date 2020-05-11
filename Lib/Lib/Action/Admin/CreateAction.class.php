@@ -371,42 +371,50 @@ class CreateAction extends BaseAction{
 	//一键生成全站地图
     public function maps(){
 		$this->check(C('url_html'),'网站地图');
-		$this->google(true);
-		$this->baidu(true);
-		$this->rss(true);
+		$this->google(true, true);
 		$this->assign("jumpUrl",'?s=Admin-Create-Show');
 		$this->success('恭喜您，所有地图生成完毕！');	
 	}
 	//生成Baidu地图
-    public function baidu($id = ''){
+    public function baidu($id = '', $pgid = ''){
+		$googleall = !empty($_REQUEST['googleall'])?intval($_REQUEST['googleall']):5000;
+		$google = !empty($_REQUEST['google'])?intval($_REQUEST['google']):1000;
 		$baiduall = !empty($_REQUEST['baiduall'])?intval($_REQUEST['baiduall']):10000;
 		$baidu = !empty($_REQUEST['baidu'])?intval($_REQUEST['baidu']):2000;
-		$pgid = !empty($_GET['page'])?intval($_GET['page']):1;
+		$pgid = (!empty($_GET['page'])&&empty($pgid)?intval($_GET['page']):1);
 		$page = ceil(intval($baiduall)/intval($baidu));
+		$id = (!empty($_REQUEST['id'])||!empty($id)?'-id-1':'-id-0');
 		if($pgid <= $page){
 			$this->map_create('baidu',$baidu,$pgid);
-			$this->jump('?s=Admin-Create-Baidu-page-'.($pgid+1),'正在执行第('.$pgid.')页 Baidu Sitemap 地图生成成功！');
+			$this->jump('?s=Admin-Create-Baidu-google-'.$google.'-googleall-'.$googleall.'-baidu-'.$baidu.'-baiduall-'.$baiduall.'-page-'.($pgid+1).$id,'正在执行第('.$pgid.')页 Baidu Sitemap 地图生成成功！');
 		}
-		if (empty($id)) {
+		if (empty(substr($id, -1))) {
 			$this->assign("waitSecond",5);
 			$this->assign("jumpUrl",'?s=Admin-Create-Show');
         	$this->success('Baidu Sitemap地图生成成功！<br />请通过<a href="https://ziyuan.baidu.com" target="_blank">百度站长平台</a>提交！');			
-		}			    
+		} else {
+			$this->rss(true);
+		}
     }
 	//生成Google地图
-    public function google($id = ''){
+    public function google($id = '', $pgid = ''){
 		$googleall = !empty($_REQUEST['googleall'])?intval($_REQUEST['googleall']):5000;
 		$google = !empty($_REQUEST['google'])?intval($_REQUEST['google']):1000;
-		$pgid = !empty($_GET['page'])?intval($_GET['page']):1;
+		$baiduall = !empty($_REQUEST['baiduall'])?intval($_REQUEST['baiduall']):10000;
+		$baidu = !empty($_REQUEST['baidu'])?intval($_REQUEST['baidu']):2000;
+		$pgid = (!empty($_GET['page'])&&empty($pgid)?intval($_GET['page']):1);
 		$page = ceil(intval($googleall)/intval($google));
+		$id = (!empty($_REQUEST['id'])||!empty($id)?'-id-1':'-id-0');
 		if($pgid <= $page){
 			$this->map_create('google',$google,$pgid);
-			$this->jump('?s=Admin-Create-Google-page-'.($pgid+1),'正在执行第('.$pgid.')页 Google Sitemap 地图生成成功！');
+			$this->jump('?s=Admin-Create-Google-google-'.$google.'-googleall-'.$googleall.'-baidu-'.$baidu.'-baiduall-'.$baiduall.'-page-'.($pgid+1).$id,'正在执行第('.$pgid.')页 Google Sitemap 地图生成成功！');
 		}
-		if (empty($id)) {
+		if (empty(substr($id, -1))) {
 			$this->assign("waitSecond",5);
 			$this->assign("jumpUrl",'?s=Admin-Create-Show');
         	$this->success('Google Sitemap地图生成成功！<br />请通过<a href="https://www.google.com/webmasters/tools" target="_blank">谷歌站长工具</a>提交！');
+		} else {
+			$this->baidu(true, true);
 		}
     }
 	//生成Rss订阅
@@ -416,6 +424,9 @@ class CreateAction extends BaseAction{
 		if (empty($id)) {
 			$this->assign("jumpUrl",'?s=Admin-Create-Show');
         	$this->success('Rss订阅文件生成成功！');
+		} else {
+			$this->assign("jumpUrl",'?s=Admin-Create-Show');
+			$this->success('恭喜您，所有地图生成完毕！');	
 		}
     }
 	//生成地图共用模块

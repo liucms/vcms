@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--STATUS OK-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{$sitename}-留言本</title>
+<meta name="keywords" content="{$keywords}">
+<meta name="description" content="{$sitename}求片留言本，本站管理员将在第一时间回复与处理你的回复！">
+<!--ff.system.header -->
+<include file="Home:home_header" />
+<!--ff.留言本.表单验证 -->
+<include file="Home:home_guestbook_form" />
+</head>
+<body class="index">
+<include file="Home:pp_header" />
+<!-- // header end--> 
+
+<!-- // content start-->
+<div class="content">
+  <div id="wrapper">
+    <div class="play">
+      <div class="container">
+
+      <div class="panel">
+        <div class="panel-heading clearfix">
+          <h3 class="panel-title panel-title-icon"><img class="icon" src="{$tpl}static/images/icon-pl.png" alt="">全部评论</h3>
+        </div>
+        <div class="box2 player_l">
+
+          <div class="Gb">
+			<div class="form">
+              <form action="{$root}index.php?s=Gb-Insert" method="post" name="guestbook" id="guestbook">
+                <input name="gb_cid" type="hidden" value="<if condition="empty($id) neq true">{$id}</if>" /><textarea name="gb_content" id="gb_content" class="gb_content" maxlength="200"><if condition="empty($gb_content) neq true">{$gb_content}<else />请留下您的宝贵意见，最多200个字。</if></textarea>
+                <input id="gb_button" class="gb_button" type="submit" value="发表留言"/>
+                <if condition="C('user_vcode') eq 1"><div class="vcode">验证码：<input name="gb_code" type="text" class="gb_vcode" id="gb_vcode"/> <span id="gb_vcode_html"></span></div></if>
+                <label id="gb_tips"></label>
+              </form>
+            </div>
+            <volist name="gb_list" id="ppvod">
+              <div class="vio-pl-item"><empty name="ppvod.user_face"><a href="#" class="vio-pl-user"><img src="{$tpl}static/images/touxiang.png" /></a><else /><img src="{$ppvod.user_face}" /></empty>
+                <div class="vio-pl-rbox"><div class="vio-pl-tit"><strong>第{$ppvod.gb_floor}楼：{$ppvod.user_name}</strong><span>{$ppvod.gb_addtime|date='Y-m-d H:i:s',###}</span></div><div class="vio-pl-txt"><p>{$ppvod.gb_content|htmlspecialchars|remove_xss}</p><notempty name="ppvod.gb_intro"><p><span class="intro">站长回复：{$ppvod.gb_intro}</span></p></notempty></div></div>
+              </div>
+            </volist>
+            <if condition="$gb_count gt C('user_gbnum')"><div class="pages">{$gb_pages}</div></if>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<include file="Home:pp_footer" />
+</body>
+</html>

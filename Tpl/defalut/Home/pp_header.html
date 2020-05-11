@@ -1,0 +1,48 @@
+<header class="header">
+  <div class="navbar">
+    <div class="navbar-header navbar-header-transparent">
+      <div class="container">
+        <h1 class="navbar-brand"><a href="{$root}"><img src="{$tpl}static/images/logo.png" alt="{$sitename}"/></a></h1>
+
+        <form class="form-horizontal ff-search"  name="search" method="post" action="{$root}index.php?s=vod-search" onSubmit="return qrsearch();">
+          <div class="navbar-search hidden-xs" id="navbar-search">
+            <div class="searcg-bg"></div>
+            <div class="search">
+              <input class="search-control ff-wd" type="text" placeholder="请输入影片名称" name="wd" />
+              <button class="search-button"  name="search"> <i class="iconfont iconfont-search">&#xe679;</i> <span>搜索</span> </button>
+            </div>
+          </div>
+        </form>
+		  
+        <div class="navbar-primary">
+          <ul class="navbar-nav">
+			  <li> <a href="{$root}"><span class="icon"><img class="normal" src="{$tpl}static/images/home.png" alt="{$sitename}"> <img class="active" src="{$tpl}static/images/star-fill.png" alt="{$sitename}"> </span> <span class="text">首页</span> </a> </li>
+              <li>
+				<a href="{:getlistname(1,'list_url')}" data-hover="dropdown">
+				  <span class="icon"> <img class="normal" src="{$tpl}static/images/av.png" alt="分类">
+					  <img class="active" src="{$tpl}static/images/av-fill.png" alt="分类">
+				  </span>
+				  <span class="text">分类</span>
+				</a>
+                <div class="dropdown-menu">
+                  <div class="container">
+                    <ul class="navbar-subnav clearfix">
+                      <volist name="list_menu" id="ppvod">
+                        <volist name="ppvod.son" id="ppvod"><li><a href="{$ppvod.list_url}" <notempty name="list_id"><eq name="ppvod.list_id" value="$list_id">class="active"</eq></notempty> <notempty name="list_pid"><eq name="ppvod.list_id" value="$list_pid">class="active"</eq></notempty> data-hover="dropdown"><span>{$ppvod.list_name}</span></a></li></volist>
+                      </volist>
+
+				    </ul>
+                  </div>
+                </div>
+              </li>
+            <volist name="list_menu" id="ppvod">
+              <if condition="getlistson($ppvod['list_id']) eq 1"><li><a href="{$ppvod.list_url}" <notempty name="list_id"><eq name="ppvod.list_id" value="$list_id">class="active"</eq></notempty> <notempty name="list_pid"><eq name="ppvod.list_id" value="$list_pid">class="active"</eq></notempty> data-hover="dropdown"><span class="icon"> <img class="normal" src="{$tpl}static/images/av.png" alt="{$ppvod.list_name}"> <img class="active" src="{$tpl}static/images/av-fill.png" alt="{$ppvod.list_name}"> </span> <span class="text">{$ppvod.list_name}</span> </a></li>
+              </if>
+            </volist>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

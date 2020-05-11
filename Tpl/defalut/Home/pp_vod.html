@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--STATUS OK-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<include file="Home:home_vod_title_detail" />
+<include file="Home:home_header" />
+</head>
+<body class="index">
+<include file="Home:pp_header" />
+<!-- // header end-->
+
+<!-- // content start-->
+<div class="content">
+  <div id="wrapper">
+    <div class="container">
+      <div class="category">
+        <div class="container">
+          <dl class="clearfix">
+          <dt>类型：</dt>
+            <dd class="ff-gallery ff-text-right">
+            <volist name="list_menu" id="ppvod">
+            <if condition="getlistson($ppvod['list_id']) eq 1">
+
+            <a href="{$ppvod.list_url}" <eq name="ppvod.list_id" value="$list_id">class="active"</eq><eq name="ppvod.list_id" value="$list_pid">class="active"</eq> <eq name="ppvod.list_id" value="$list_pid">class="active"</eq>>{$ppvod.list_name}</a></if>
+            <volist name="ppvod.son" id="ppvod"><a href="{$ppvod.list_url}" <eq name="ppvod.list_id" value="$list_id">class="active"</eq><eq name="ppvod.list_id" value="$list_pid">class="active"</eq>>{$ppvod.list_name}</a></volist>
+          </volist>
+
+		    </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="top960">{:getadsurl('top960')}</div>
+
+      <div class="panel">
+        <div class="panel-heading clearfix">
+          <h3 class="panel-title">{$vod_name}</h3>
+        </div>
+        <div class="vod_l">
+          <p class="pic"><a href="{$vod_playurl}"><img class="lazy" data-original="{$vod_picurl}" src="{$tpl}static/images/no.jpg" alt="{$vod_name}全集观看" /></a></p>
+          <p class="w">电影番号：<span>{$vod_title|default='未知'}</span></p>
+          <p class="w">影片类型：<a href="{$list_url}">{$list_name}</a></p>
+          <p class="w space">影片主演：<notempty name="vod_actor">{$vod_actor|ff_search_url}<else />未录入</notempty></p>
+          <p class="w">出产地区：<span>{$vod_area|default='未知'}</span></p>
+          <p class="w">对白语言：<span>{$vod_language|default='未知'}</span></p>
+          <p class="w">更新时间：<span>{$vod_addtime|date='Y-m-d',###}</span></p>
+          <p class="w up"><include file="Home:home_vod_updown" /></p>
+          <p class="w k">关键字：<fflist name="Tag" id="ffvod"><a href="{$ffvod.tag_name|ff_tag_url}">{$ffvod.tag_name}</a>&nbsp;</fflist>{$hotkey}</p>
+        </div>
+        <div class="vod_r">{:getadsurl('vod300')}</div>
+      </div>
+      <div class="box2">
+        <volist name="vod_playlist" id="ppvod" key="playerkey">
+        <h3><div><a href="{:ff_play_url($vod_id,($playerkey-1),1,$vod_cid,$vod_name)}">播放来源：{$ppvod.playername}</a></div></h3>
+        <div class="playlist wbox">
+          <volist name="ppvod['son']" id="ppvodson"><a href="{$ppvodson.playurl}" target="_blank">{$ppvodson.playname}</a></volist>
+        </div>
+        </volist>
+
+      </div>
+
+      <div class="panel">
+        <div class="panel-heading clearfix">
+          <h3 class="panel-title panel-title-icon"><img class="icon" src="{$tpl}static/images/icon-cnxh.png" alt="">猜你喜欢 {$list_name}</h3>
+        </div>
+        <div class="panel-body">
+          <ul class="thumbnail-group thumbnail-group-sm clearfix">
+            <php>$hot_week = ff_mysql_vod('cid:'.$list_id.';limit:6;order:vod_hits_month desc,vod_addtime desc');</php>
+            <volist name="hot_week" id="ppvod">
+            <li><a class="thumbnail" href="{$ppvod.vod_readurl}">
+            <span class="img">
+              <img class="lazy" data-original="{$ppvod.vod_picurl}" src="{$tpl}static/images/no.jpg" alt="点击播放《{$ppvod.vod_name}》">
+              <span class="score">{$ppvod.vod_addtime|date='Y-m-d',###}</span>
+              <span class="lang"></span>
+            </span>
+            <span class="title">{$ppvod.vod_name|msubstr=0,12}</span>
+            <div class="i-item-txt">
+               <div class="i-item-low ac">
+                 <em><i class="icon-star fl"></i>{$ppvod.vod_gold}</em>
+                 <b>·</b>
+                 <span>{$list_name}</span>
+               </div>
+             </div>
+            </a></li>
+            </volist>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script language="javascript">FF.History.Insert('{$vod_name}','{$vod_readurl}',10,7,'','');</script>
+{$vod_hits_insert}
+<include file="Home:pp_footer" />
+</body>
+</html>

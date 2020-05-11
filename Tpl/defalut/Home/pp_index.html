@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<!--STATUS OK-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{$title}</title>
+<meta name="keywords" content="{$keywords}">
+<meta name="description" content="{$description}">
+<include file="Home:home_header" />
+</head>
+<body class="index"><php>
+$vod_stars = ff_mysql_vod('limit:8;order:vod_stars desc,vod_hits desc');
+$vod_news = ff_mysql_vod('limit:13;order:vod_addtime desc');
+$vod_hot_tv = ff_mysql_vod('limit:21;cid:2;order:vod_gold desc,vod_hits desc');
+$vod_hot_dm = ff_mysql_vod('limit:10;cid:3;order:vod_gold desc,vod_hits desc');
+$vod_hot_dy = ff_mysql_vod('limit:10;cid:1;order:vod_gold desc,vod_hits desc');</php>
+
+<include file="Home:pp_header" />
+<!-- // header end-->
+<div class="content">
+  <div class="appdown-index">{:getadsurl('index960')}</div>
+  <div id="wrapper">
+    <div class="container">
+      <div class="top960">{:getadsurl('top960')}</div>
+      <div class="panel">
+        <div class="panel-heading clearfix">
+          <h3 class="panel-title panel-title-icon"><img class="icon" src="{$tpl}static/images/icon-hot.png" alt="今日推荐">今日推荐</h3>
+	      <div class="panel-title-vod">
+          <ul>
+            <fflist name="vod_news" id="ppvod" mod="4">
+            <li><a class="mdui-btn" href="{$ppvod.vod_readurl}" title="{$ppvod.vod_name}">{$ppvod.vod_name|msubstr=0,4|getcolor=$ppvod['vod_color']}</a></li>
+            </fflist>
+
+          </ul>
+        </div>
+      </div>
+      <div class="panel-body">
+      <ul class="thumbnail-group thumbnail-group-lg clearfix">
+	    <fflist name="vod_stars" id="ppvod"><li><a class="thumbnail" href="{$ppvod.vod_readurl}"><span class="img"><img class="lazy" data-original="{$ppvod.vod_picurl}" src="{$tpl}static/images/no.jpg" alt="点击播放《{$ppvod.vod_name}》" style="height:200px;" /><span class="score"></span>
+        </span><span class="title">{$ppvod.vod_name|msubstr=0,22}</span></a></li></fflist>
+
+      </ul>
+      </div>
+    </div>
+
+    <!--循环开始-->
+
+    <php>$cid_arr = array(9,8,7,6,5,4);</php>
+    <fflist name="cid_arr" id="ppcid" key="k">
+    <php>$vod_new = ff_mysql_vod('cid:'.$ppcid.';limit:12;order:vod_addtime desc');</php>
+
+    <div class="panel">
+      <div class="panel-heading clearfix">
+        <h3 class="panel-title panel-title-icon"><img class="icon" src="{$tpl}static/images/icon-v.png" alt="{:getlistname($ppcid)}">{:getlistname($ppcid)}</h3>
+        <div class="panel-more"><a href="{:getlistname($ppcid,'list_url')}">更多<i class="iconfont">&#xe609;&#xe609;</i></a></div>
+      </div>
+      <div class="panel-body">
+        <ul class="thumbnail-group thumbnail-group-sm clearfix">
+        <fflist name="vod_new" id="ppvod">
+          <li><a class="thumbnail" href="{$ppvod.vod_readurl}">
+            <span class="img">
+              <img class="lazy" data-original="{$ppvod.vod_picurl}" src="{$tpl}static/images/no.jpg" alt="点击播放《{$ppvod.vod_name}》">
+              <span class="score">{$ppvod.vod_addtime|date='Y-m-d',###}</span>
+              <span class="lang"></span>
+            </span>
+            <span class="title">{$ppvod.vod_name|msubstr=0,12}</span>
+            <div class="i-item-txt">
+              <div class="i-item-low ac">
+                <em><i class="icon-star fl"></i>{$ppvod.vod_gold}</em>
+                <b>·</b>
+                <span>{:getlistname($ppcid)}</span>
+              </div>
+            </div>
+	      </a></li>
+        </fflist>
+
+        </ul>	
+      </div>
+    </div>
+    </fflist>
+
+    <!--循环结束-->
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="link">
+      <div class="link_titie"><span>友情链接</span></div>
+      <ul>
+        <fflist name="list_link" id="ppvod"><li><a href="{$ppvod.link_url}" target="_blank">{$ppvod.link_name}</a></li></fflist>
+
+      </ul>
+    </div> 
+  </div>
+</div>
+<include file="Home:pp_footer" />
+
+</body>
+</html>

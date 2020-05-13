@@ -202,6 +202,7 @@ a.Down{padding-left:5px;}
 .top960 img{ width: 100%; min-height:60px;}
 .play300 img{ display:none; }
 .play300 { display:none; }
+.SiteMap li { display:inline;}
 @media (max-width:767px) {.fixediv {display:none}}
 /*新增样式*/
 .panel-title-vod {width:auto;height:100%;float:left;margin-left:15px;}

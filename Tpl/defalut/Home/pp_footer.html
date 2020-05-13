@@ -16,7 +16,17 @@
     </ul>
   </div>
 </div>
-<!-- // footer end--> 
+<!-- // footer end-->
+<script>
+    $(document).ready(function(){
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 200) {
+                $(".navbar").addClass("navbar-inverse");
+            } else {
+                $(".navbar").removeClass("navbar-inverse");
+            }
+        }); 
+    }); 
+</script>
 <div style="display:none">{$tongji}</div>
-
 <div class="fixed-footer">{:getadsurl('float960')}</div>

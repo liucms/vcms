@@ -433,6 +433,10 @@ a.label-danger:hover,a.label-danger:focus {background-color:#c9302c;}
 .footer-links .tags-group,.footer-links .list-group {margin-right:20%;padding-right:10%;border-right:1px solid #1c1e21;}
 .footer-links .list-group {margin-top:5px;}
 .footer-links h5 {height:30px;line-height:30px;font-size:20px;color:#999;margin-bottom:10px;}
+/* share-group */
+.share-group {float:right;}
+.share-group a {float:left;border:1px solid #dcdcdc;background:#f50366;color:#ffffff;display:block;width:150px;height:30px;line-height:30px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;text-align:center;margin:6px 0px 7px 17px;}
+.share-group a:hover,.playlist .on {background:#f50366;color:#ffffff;border:1px solid #ffffff;text-decoration:none;}
 /* tags-group */
 .tags-group {font-size:0;line-height:1;}
 .tags-group > a {display:inline-block;height:30px;line-height:30px;overflow:hidden;padding:0 15px;margin:10px 10px 0 0;font-size:14px;color:#c7c3c9;color:rgba(255,255,255,.75);background-color:#1e1129;background-color:rgba(51,34,66,.5);border-radius:30px;}

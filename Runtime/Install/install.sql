@@ -90,14 +90,14 @@ CREATE TABLE IF NOT EXISTS ff_list (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 INSERT INTO ff_list (list_id, list_pid, list_oid, list_sid, list_name, list_skin, list_skin_detail, list_skin_play, list_skin_type, list_dir, list_status, list_keywords, list_title, list_description, list_jumpurl) VALUES
-(9, 1, 9, 1, '无码视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'wuma', 1, '', '', '', ''),
-(8, 1, 8, 1, '有码视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'youma', 1, '', '', '', ''),
-(7, 1, 7, 1, '欧美视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'oumei', 1, '', '', '', ''),
-(6, 1, 6, 1, '亚洲视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'yazhou', 1, '', '', '', ''),
-(5, 1, 5, 1, '中文字幕', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'zimu', 1, '', '', '', ''),
-(4, 1, 4, 1, '自拍视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'zipai', 1, '', '', '', ''),
-(3, 0, 3, 1, '番号', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'fanhao', 1, '', '', '', ''),
-(2, 0, 2, 1, '动漫', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'dongman', 1, '', '', '', ''),
+(9, 1, 9, 1, '动画视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'donghua', 1, '', '', '', ''),
+(8, 1, 8, 1, '犯罪视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'fanzui', 1, '', '', '', ''),
+(7, 1, 7, 1, '惊悚视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'jingsong', 1, '', '', '', ''),
+(6, 1, 6, 1, '恐怖视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'kongbu', 1, '', '', '', ''),
+(5, 1, 5, 1, '动作视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'dongzuo', 1, '', '', '', ''),
+(4, 1, 4, 1, '喜剧视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'xiju', 1, '', '', '', ''),
+(3, 0, 3, 1, '爱情', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'aiqing', 1, '', '', '', ''),
+(2, 0, 2, 1, '科幻', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'kehuan', 1, '', '', '', ''),
 (1, 0, 1, 1, '电影', 'pp_vodchannel', 'pp_vod', 'pp_play', 'pp_vodtype', 'dianying', 1, '', '', '', '');
 
 CREATE TABLE IF NOT EXISTS ff_news (

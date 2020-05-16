@@ -549,7 +549,7 @@ a.label-danger:hover,a.label-danger:focus {background-color:#c9302c;}
 .fixed-footer .btn {margin:5px;width:auto;}
 .fixed-footer {position:fixed;left:0;right:0;bottom:0;color:#fff;text-align:center;white-space:nowrap;font-size:16px;background-color:rgba(0,0,0,.75); z-index:10;}
 .fixed-footer img{width:100%; min-height:70px;}
-.fixed-footer .close{display:block;position:absolute;right:0;top:0;left:unset;width:3em;height:1.5em;line-height:1.5em;z-index:100;font-size:.8em;background:none;text-align:center;background:rgba(231, 7, 115);color:white;}
+.fixed-footer .close{display:block;position:absolute;right:0;top:0;left:unset;width:3.5em;height:2.5em;line-height:2.5em;z-index:100;font-size:1.0em;background:none;text-align:center;background:rgba(231, 7, 115);color:white;}
 /* appdown-index */
 .appdown-index {position:relative;overflow:hidden;padding:20px 0 5px 0;background-color:#f50366;background:-webkit-linear-gradient(bottom right,#32054f,#620230);background:linear-gradient(bottom right,#32054f,#620230);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#32054f,endColorstr=#620230);background:url(../images/jumbotron.jpg) 0 0 no-repeat;background-size:cover;}
 .appdown-index a {display:block;}

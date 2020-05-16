@@ -55,7 +55,7 @@ function getVideo($cid = 1, $p = 1) {
 function getInsert($host,$user,$passwd,$db,$sql){
     try {
         $conn = new PDO('mysql:host='.$host.';dbname='.$db, $user, $passwd);
-		$conn->query("set names utf8");
+        $conn->query("set names utf8");
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $conn->exec($sql);
         echo "新记录插入成功";

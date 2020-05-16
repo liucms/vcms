@@ -18,15 +18,21 @@
 </div>
 <!-- // footer end-->
 <script>
-    $(document).ready(function(){
-        $(window).scroll(function () {
-            if ($(window).scrollTop() > 200) {
-                $(".navbar").addClass("navbar-inverse");
-            } else {
-                $(".navbar").removeClass("navbar-inverse");
-            }
-        }); 
-    }); 
+$(function () {
+  $(document).ready(function(){
+    $(window).scroll(function () {
+      if ($(window).scrollTop() > 200) {
+        $(".navbar").addClass("navbar-inverse");
+      } else {
+        $(".navbar").removeClass("navbar-inverse");
+      }
+    });
+  });
+  $('body').on('click', '.close', function () {
+    $(this).parent($(".link")).css({'display':'none'});
+    return false;
+  });
+})
 </script>
 <div style="display:none">{$tongji}</div>
-<div class="fixed-footer">{:getadsurl('float960')}</div>
+<div class="fixed-footer">{:getadsurl('float960')}<span class="close">关闭</span></div>

@@ -96,13 +96,15 @@
 <script src="{$tpl}static/js/clipboard.min.js"></script>
 <script src="{$tpl}static/js/layer.js"></script>
 <script type="text/javascript">
+$(function () {
   new ClipboardJS(".mac_ulog");
   $(".mac_ulog").click(function() {
     layer.tips("复制成功，么么哒", ".mac_ulog", {
-        tips: [3, "rgb(245,3,102)"],
-        time:500
+      tips: [3, "rgb(245,3,102)"],
+      time:500
     });
   })
+})
 </script>
 
 <include file="Home:pp_footer" />

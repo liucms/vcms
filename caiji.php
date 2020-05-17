@@ -33,7 +33,6 @@ if(!empty($_GET['id'])&&!empty($_GET['n'])) {
             $data[] = '('.(intval($_GET['n'])+1).', \''.htmlspecialchars(trim($vod_name[0]),ENT_QUOTES).'\', \''.htmlspecialchars(trim($vod_name[1]),ENT_QUOTES).'\', \'\', \'\', \'\', \'\', \''.htmlspecialchars(trim($vod_name[0]),ENT_QUOTES).'\', \''.trim($vod_pic).'\', \''.$vod_area.'\', \'\', 0, \'0\', \'\', 1, \''.$vod_addtime.'\', '.mt_rand(60500,96080).', '.mt_rand(5080,8090).', '.mt_rand(500,900).', '.mt_rand(50,90).', \''.$vod_addtime.'\', 1, 1, '.mt_rand(20800,40900).', '.mt_rand(108,809).', \'m3u8\', \'\', \''.$vod_url.'\', \'admin\', \'\', \'\', \''.$getPY.'\', \'\', \''.mt_rand(6,9).'.'.mt_rand(2,5).'\', '.mt_rand(3050,7608).', 1, 0, 0, 0)';
         }
         if(!empty($data)&&is_array($data)) {
-            shuffle($data);
             $data = 'INSERT INTO `ff_vod` (`vod_cid`, `vod_name`, `vod_title`, `vod_keywords`, `vod_color`, `vod_actor`, `vod_director`, `vod_content`, `vod_pic`, `vod_area`, `vod_language`, `vod_year`, `vod_continu`, `vod_total`, `vod_isend`, `vod_addtime`, `vod_hits`, `vod_hits_day`, `vod_hits_week`, `vod_hits_month`, `vod_hits_lasttime`, `vod_stars`, `vod_status`, `vod_up`, `vod_down`, `vod_play`, `vod_server`, `vod_url`, `vod_inputer`, `vod_reurl`, `vod_jumpurl`, `vod_letter`, `vod_skin`, `vod_gold`, `vod_golder`, `vod_isfilm`, `vod_filmtime`, `vod_length`, `vod_weekday`) VALUES '.implode(',',$data).';';
             file_put_contents('video/video'.intval($_GET['n']).'.txt', $data.PHP_EOL, FILE_APPEND|LOCK_EX);
             // 配置数据库连接

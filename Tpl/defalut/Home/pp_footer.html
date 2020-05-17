@@ -28,8 +28,8 @@ $(function () {
       }
     });
   });
-  $('body').on('click', '.close', function () {
-    $(this).parent($(".link")).css({'display':'none'});
+  $('div').on('click', '.close', function () {
+    $(this).parent($(".fixed-footer")).css({'display':'none'});
     return false;
   });
 })

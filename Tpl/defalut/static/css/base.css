@@ -9,7 +9,7 @@ input,button,textarea,select,optgroup,option {font-family:inherit;font-size:inhe
 code,kbd,samp,tt {font-size:100%;}
 input,button,textarea,select {*font-size:100%;}
 input[type="reset"]::-moz-focus-inner,input[type="button"]::-moz-focus-inner,input[type="submit"]::-moz-focus-inner,input[type="file"] > input[type="button"]::-moz-focus-inner {border:none;padding:0;}
-input {border:none;font-size:14px;}
+input {border:none;font-size:14px;-webkit-appearance: none;outline:none;}
 ol,ul,li {list-style:none;}
 table {border-collapse:collapse;border-spacing:0;}
 caption {text-align:left;}

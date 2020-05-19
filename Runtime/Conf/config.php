@@ -17,8 +17,11 @@ return array (
   'site_email' => '110119@qq.com',
   'site_copyright' => '本网站为非赢利性站点，本网站所有内容均来源于互联网相关站点自动搜索采集信息，相关链接已经注明来源。',
   'site_hot' => '热门影片1
+
 热门影片2
+
 热门影片3
+
 热门影片4',
   'site_tongji' => '',
   'site_icp' => 'ICP备2010111号',

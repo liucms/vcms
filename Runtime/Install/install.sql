@@ -24,14 +24,14 @@ CREATE TABLE IF NOT EXISTS ff_ads (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 INSERT INTO `ff_ads` (`ads_id`, `ads_name`, `ads_content`) VALUES
-(1, 'play300', '扩展工具>网站广告管理>play300'),
+(1, 'pagePlaty', '扩展工具>网站广告管理>pagePlaty'),
 (2, 'list300', '留空>扩展工具>网站广告管理>list300'),
 (3, 'vod960', '留空>扩展工具>网站广告管理>vod960'),
-(4, 'vod300', '扩展工具>网站广告管理>vod300'),
-(5, 'top960', '扩展工具>网站广告管理>top960'),
+(4, 'pageVod', '扩展工具>网站广告管理>pageVod'),
+(5, 'pageTop', '扩展工具>网站广告管理>pageTop'),
 (6, 'play960', '留空>扩展工具>网站广告管理>play960'),
-(7, 'index960', '扩展工具>网站广告管理>index960'),
-(8, 'float960', '扩展工具>网站广告管理>float960');
+(7, 'pageIndex', '扩展工具>网站广告管理>pageIndex'),
+(8, 'pageFloat', '扩展工具>网站广告管理>pageFloat');
 
 CREATE TABLE IF NOT EXISTS ff_cm (
   cm_id mediumint(8) unsigned NOT NULL auto_increment,

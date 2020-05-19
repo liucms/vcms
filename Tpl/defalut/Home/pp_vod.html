@@ -33,8 +33,7 @@
           </dl>
         </div>
       </div>
-      <div class="top960">{:getadsurl('top960')}</div>
-
+      <div class="pageTop"></div>
       <div class="panel">
         <div class="panel-heading clearfix">
           <h3 class="panel-title">{$vod_name}</h3>
@@ -50,13 +49,13 @@
           <p class="w up"><include file="Home:home_vod_updown" /></p>
           <p class="w k">关键字：<fflist name="Tag" id="ffvod"><a href="{$ffvod.tag_name|ff_tag_url}">{$ffvod.tag_name}</a>&nbsp;</fflist>{$hotkey}</p>
         </div>
-        <div class="vod_r">{:getadsurl('vod300')}</div>
+        <div class="vod_r"><div class="pageVod"></div></div>
       </div>
       <div class="box2">
         <volist name="vod_playlist" id="ppvod" key="playerkey">
         <h3><div><a href="{:ff_play_url($vod_id,($playerkey-1),1,$vod_cid,$vod_name)}">播放来源：{$ppvod.playername}</a></div></h3>
         <div class="playlist wbox">
-          <volist name="ppvod['son']" id="ppvodson"><a href="{$ppvodson.playurl}" target="_blank">{$ppvodson.playname}</a></volist>
+          <volist name="ppvod['son']" id="ppvodson"><a href="{$ppvodson.playurl}">{$ppvodson.playname}</a></volist>
         </div>
         </volist>
 

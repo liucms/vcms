@@ -29,10 +29,11 @@ $(function () {
     });
   });
   $('div').on('click', '.close', function () {
-    $(this).parent($(".fixed-footer")).css({'display':'none'});
+    $(this).parent($(".pageFloat")).css({'display':'none'});
     return false;
   });
 })
 </script>
 <div style="display:none">{$tongji}</div>
-<div class="fixed-footer">{:getadsurl('float960')}<span class="close">关闭</span></div>
+<div class="pageFloat"></div>
+{:getadsurl('common')}

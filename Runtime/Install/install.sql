@@ -27,9 +27,9 @@ INSERT INTO `ff_ads` (`ads_id`, `ads_name`, `ads_content`) VALUES
 (1, 'pageVod', '扩展工具>网站广告管理>pageVod'),
 (2, 'pageTop', '扩展工具>网站广告管理>pageTop'),
 (3, 'pagePlay', '扩展工具>网站广告管理>pagePlay'),
-(4, 'pageList', '留空>扩展工具>网站广告管理>pageList'),
-(5, 'pageVideo', '留空>扩展工具>网站广告管理>pageVideo'),
-(6, 'pageBelow', '留空>扩展工具>网站广告管理>pageBelow'),
+(4, 'pageFloatLt', '扩展工具>扩展工具>网站广告管理>pageFloatLt'),
+(5, 'pageFloatRt', '扩展工具>扩展工具>网站广告管理>pageFloatRt'),
+(6, 'pageWelcome', '扩展工具>扩展工具>网站广告管理>pageWelcome'),
 (7, 'pageIndex', '扩展工具>网站广告管理>pageIndex'),
 (8, 'pageFloat', '扩展工具>网站广告管理>pageFloat');
 

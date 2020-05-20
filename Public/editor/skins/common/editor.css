@@ -17,7 +17,7 @@ p {
 }
 .ke-flash {
 	border:1px solid #AAAAAA;
-	background-image:url(./flash.gif);
+	background-image:url(./flash.jpg);
 	background-position:center center;
 	background-repeat:no-repeat;
 	width:100px;
@@ -25,7 +25,7 @@ p {
 }
 .ke-rm {
 	border:1px solid #AAAAAA;
-	background-image:url(./rm.gif);
+	background-image:url(./rm.jpg);
 	background-position:center center;
 	background-repeat:no-repeat;
 	width:100px;
@@ -33,7 +33,7 @@ p {
 }
 .ke-media {
 	border:1px solid #AAAAAA;
-	background-image:url(./media.gif);
+	background-image:url(./media.jpg);
 	background-position:center center;
 	background-repeat:no-repeat;
 	width:100px;

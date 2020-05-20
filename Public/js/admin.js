@@ -100,12 +100,12 @@ function setstars(mid, id, stars){
 	$.get('?s=Admin-'+mid+'-Ajaxstars-id-'+id+'-stars-'+stars, function(obj){
 		if(obj == 'ok'){
 			for(i=1; i<=5; i++){
-				$('#star_'+id+'_'+i).attr("src","./Public/images/admin/star0.gif");
+				$('#star_'+id+'_'+i).attr("src","./Public/images/admin/star0.jpg");
 				//$('#star_'+id+'_'+i).removeClass('star1');
 				//$('#star_'+id+'_'+i).addClass('star0');
 			}
 			for(i=1; i<=stars; i++){
-				$('#star_'+id+'_'+i).attr("src","./Public/images/admin/star1.gif");
+				$('#star_'+id+'_'+i).attr("src","./Public/images/admin/star1.jpg");
 			}	
 		}
 	});
@@ -113,10 +113,10 @@ function setstars(mid, id, stars){
 //设置星级(添加与编辑)
 function addstars(sid,stars){
 	for(i=1; i<=5; i++){
-		$('#star_'+i).attr("src","./Public/images/admin/star0.gif");
+		$('#star_'+i).attr("src","./Public/images/admin/star0.jpg");
 	}
 	for(i=1; i<=stars; i++){
-		$('#star_'+i).attr("src","./Public/images/admin/star1.gif");
+		$('#star_'+i).attr("src","./Public/images/admin/star1.jpg");
 	}
 	$('#'+sid+'_stars').val(stars);
 }
@@ -137,7 +137,7 @@ function hidecontinu(){
 //AJAX连载
 function ajaxcontinu(id,value){
 	if(value==0){
-		$('#ct_'+id).html('<img src="./Public/images/admin/ct.gif" style="margin-top:10px" class="navpoint" onClick="setcontinu('+id+',0);">');
+		$('#ct_'+id).html('<img src="./Public/images/admin/ct.jpg" style="margin-top:10px" class="navpoint" onClick="setcontinu('+id+',0);">');
 	}else{
 		$('#ct_'+id).html('<sup onClick=setcontinu('+id+',"'+value+'") class="navpoint">'+value+'</sup>');
 	}

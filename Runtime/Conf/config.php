@@ -109,7 +109,7 @@ return array (
   'upload_thumb_w' => '120',
   'upload_thumb_h' => '140',
   'upload_water' => false,
-  'upload_water_img' => './Public/images/water.gif',
+  'upload_water_img' => '',
   'upload_water_pct' => '75',
   'upload_water_pos' => '9',
   'upload_http' => false,

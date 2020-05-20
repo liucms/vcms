@@ -347,7 +347,7 @@
 	background-position: -0px -754px;
 	width: 15px;
 	height: 11px;
-	background-image: url(./default/default.gif);
+	background-image: url(./default/default.jpg);
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -369,7 +369,7 @@
 	background-position: -9px -745px;
 	width: 7px;
 	height: 7px;
-	background-image: url(./default/default.gif);
+	background-image: url(./default/default.jpg);
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -434,7 +434,7 @@
 	*display: inline;
 }
 .ke-common-icon-url {
-	background-image: url(./default/default.gif);
+	background-image: url(./default/default.jpg);
 }
 .ke-icon {
 	display: block;
@@ -712,7 +712,7 @@ span.ke-dialog-empty {
 	right: 15px;
 	top: 15px;
 	cursor: pointer;
-	background-image: url(./default/default.gif);
+	background-image: url(./default/default.jpg);
 	overflow: hidden;
 }
 .ke-dialog-close-shadow {
@@ -896,7 +896,7 @@ span.ke-dialog-empty {
 	margin:2px;
 	width:24px;
 	height:24px;
-	background-image:url(../plugins/emoticons/qq.gif);
+	background-image:url(../plugins/emoticons/qq.jpg);
 	margin: 0;
 	padding: 0;
 	border: 0;

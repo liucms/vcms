@@ -120,7 +120,7 @@ KE.event.ready(function() {
 			row.onmouseout = function () { this.className = 'noselected'; };
 			var cell0 = row.insertCell(0);
 			cell0.className = 'name';
-			var iconName = data.is_dir ? 'folder-16.gif' : 'file-16.gif';
+			var iconName = data.is_dir ? 'folder-16.jpg' : 'file-16.jpg';
 			var img = KE.$$('img', document);
 			img.src = './images/' + iconName;
 			img.width = 16;
@@ -165,7 +165,7 @@ KE.event.ready(function() {
 			cell.valign = 'middle';
 			cell.align = 'center';
 			var fileUrl = result.current_url + data.filename;
-			var iconUrl = data.is_dir ? './images/folder-64.gif' : (data.is_photo ? fileUrl : './images/file-64.gif');
+			var iconUrl = data.is_dir ? './images/folder-64.jpg' : (data.is_photo ? fileUrl : './images/file-64.jpg');
 			var img = KE.$$('img', document);
 			img.src = iconUrl;
 			img.width = data.is_dir ? 64 : 80;

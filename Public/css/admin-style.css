@@ -8,7 +8,7 @@ a:hover{color:#222;text-decoration:underline}
 .noborder{border:none}
 div{margin-left:auto;margin-right:auto}
 input{border-bottom:1px solid #bdc5ca;border-right:1px solid #bdc5ca;border-top:1px solid #6f787e;border-left:1px solid #6f787e;font-size:12px;height:20px;line-height:20px}
-button,.button,.submit{height:24px;line-height:24px;border:1px solid #c6d2e3;background:url("../images/admin/button_bg.gif");font-size:12px;cursor:hand;letter-spacing:3px}
+button,.button,.submit{height:24px;line-height:24px;border:1px solid #c6d2e3;background:url("../images/admin/button_bg.jpg");font-size:12px;cursor:hand;letter-spacing:3px}
 .bl{border-left:1px solid #cad9ea}
 .br{border-right:1px solid #cad9ea}
 .fl{float:left}
@@ -34,13 +34,13 @@ button,.button,.submit{height:24px;line-height:24px;border:1px solid #c6d2e3;bac
 .continu{position:absolute;z-index:100;width:250px;border:1px solid #ffbe8c;background:#fff1e7;padding:3px 0px 3px 0px;text-align:center}
 .continu input{text-align:center;border:1px solid #CCCCCC}
 .htmltags{overflow:hidden;border:5px solid #CCCCCC;background:#FFFFFF;padding:10px 5px;line-height:25px;text-align:left}
-.star0{width:14px;height:14px;background:url(../images/admin/star0.gif) no-repeat}
-.star1{width:14px;height:14px;background:url(../images/admin/star1.gif) no-repeat}
-.continu0{width:16px;height:16px;background:url(../images/admin/continu0.gif)}
-.continu1{width:16px;height:16px;background:url(../images/admin/continu1.gif)}
+.star0{width:14px;height:14px;background:url(../images/admin/star0.jpg) no-repeat}
+.star1{width:14px;height:14px;background:url(../images/admin/star1.jpg) no-repeat}
+.continu0{width:16px;height:16px;background:url(../images/admin/continu0.jpg)}
+.continu1{width:16px;height:16px;background:url(../images/admin/continu1.jpg)}
 .body{padding:2px 2px 4px 2px;background:#ffffff;margin:0 auto}
 .table{width:99%;border:1px solid #cad9ea;border-top:none;border-bottom:none;margin-bottom:2px;text-align:left}
-.table thead{height:28px;line-height:28px;background:url(../images/admin/bg2.gif) repeat-x;font-size:12px}
+.table thead{height:28px;line-height:28px;background:url(../images/admin/bg.jpg) repeat-x;font-size:12px}
 .table thead a,.title a{font-size:12px}
 .table thead th{font-weight:normal;padding-left:10px;border-top:1px solid #cad9ea;font-size:12px}
 .table thead th a{font-size:12px}
@@ -63,7 +63,7 @@ button,.button,.submit{height:24px;line-height:24px;border:1px solid #c6d2e3;bac
 .bgEven{background:#FFFFFF}
 .bgOdd{background:#FEFEFE}
 .bgOver{background-color:#FCF9F9}
-.title{width:99%;clear:both;height:28px;line-height:28px;border:1px solid #cad9ea;background:url(../images/admin/bg2.gif) repeat-x}
+.title{width:99%;clear:both;height:28px;line-height:28px;border:1px solid #cad9ea;background:url(../images/admin/bg.jpg) repeat-x}
 .title .tabs{float:left;font-size:12px;color:#083772}
 .title .tabs a{padding:0px 15px;border-right:1px solid #cad9ea;display:block;float:left}
 .title .tabs a:hover,.title .tabs .on{background:#FFF;color:#990000}
@@ -72,7 +72,7 @@ button,.button,.submit{height:24px;line-height:24px;border:1px solid #c6d2e3;bac
 .form{width:99%;overflow:hidden;border:1px solid #cad9ea;border-top:0px;clear:both}
 .form .table{width:100%;border:none}
 .form .footer{border:none;padding:5px 0px 5px 100px}
-.form .footer input{width:auto;color:#333;background:url(../images/admin/button_bg.gif);height:26px;border:1px solid #c6d2e3;letter-spacing:10px;cursor:hand}
+.form .footer input{width:auto;color:#333;background:url(../images/admin/button_bg.jpg);height:26px;border:1px solid #c6d2e3;letter-spacing:10px;cursor:hand}
 .add{width:99%;overflow:hidden;border:1px solid #cad9ea;border-top:0px;clear:both}
 .add ul{border-bottom:1px solid #cad9ea;clear:both}
 .add ul li{float:left;height:35px;line-height:35px}
@@ -98,4 +98,4 @@ button,.button,.submit{height:24px;line-height:24px;border:1px solid #c6d2e3;bac
 .add ul .right .radio{border:none;width:12px;height:12px}
 .add ul .t25{padding-top:25px}
 .add .footer{border:none;padding:5px 0px 5px 100px}
-.add .footer input{width:auto;color:#333;background:url(../images/admin/button_bg.gif);height:26px;border:1px solid #c6d2e3;letter-spacing:10px;cursor:hand}
+.add .footer input{width:auto;color:#333;background:url(../images/admin/button_bg.jpg);height:26px;border:1px solid #c6d2e3;letter-spacing:10px;cursor:hand}

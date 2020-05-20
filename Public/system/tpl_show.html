@@ -26,7 +26,7 @@ $(document).ready(function(){
 <notempty name="dirlast"> 
   <tbody>  
   <tr class="firstalt">
-  <td colspan="5" class="r pd"><img src="__PUBLIC__/images/file/last.gif"> <a href="?s=Admin-Tpl-Show-id-{$dirlast}">上级目录</a> 当前目录: {$dirpath}</td>
+  <td colspan="5" class="r pd"><img src="__PUBLIC__/images/file/last.jpg"> <a href="?s=Admin-Tpl-Show-id-{$dirlast}">上级目录</a> 当前目录: {$dirpath}</td>
   </tr>
   </tbody>
 </notempty>
@@ -34,7 +34,7 @@ $(document).ready(function(){
   <eq name="ppvod.isDir" value="1">
   <tbody> 
   <tr>
-  	<td class="l pd"><img src="__PUBLIC__/images/file/folder.gif" width="16" height="16"><a href="?s=Admin-Tpl-Show-id-{$ppvod.pathfile}"> {$ppvod.filename}</a></td>
+  	<td class="l pd"><img src="__PUBLIC__/images/file/folder.jpg" width="16" height="16"><a href="?s=Admin-Tpl-Show-id-{$ppvod.pathfile}"> {$ppvod.filename}</a></td>
     <td class="l ct">文件夹</td>
     <td class="l ct">{:byte_format(getdirsize($ppvod['path'].'/'.$ppvod['filename']))}</td>
     <td class="l ct">{$ppvod.mtime|getcolordate='Y-m-d H:i:s',###}</td>
@@ -45,9 +45,9 @@ $(document).ready(function(){
   <tbody> 
   <tr>
   	<in name="ppvod.ext" value="jpg,gif,js,css,html,htm,php">
-    <td class="l pd"><img src="__PUBLIC__/images/file/{$ppvod.ext}.gif" width="16" height="16"> {$ppvod.filename}</td>
+    <td class="l pd"><img src="__PUBLIC__/images/file/{$ppvod.ext}.jpg" width="16" height="16"> {$ppvod.filename}</td>
     <else />
-    <td class="l pd"><img src="__PUBLIC__/images/file/other.gif" width="16" height="16"> {$ppvod.filename}</td>
+    <td class="l pd"><img src="__PUBLIC__/images/file/other.jpg" width="16" height="16"> {$ppvod.filename}</td>
     </in>
     <td class="l ct">{$ppvod.filename|gettplname}</td>
     <td class="l ct">{$ppvod.size|byte_format}</td>

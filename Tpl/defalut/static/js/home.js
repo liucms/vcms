@@ -277,7 +277,7 @@ var FF = {
 			if($score>=8.0) return array_str[4];
 		}
 	},
-	//图片延时加载 FF.Lazyload.Box('frame'); <img class="lazy" data-original="{$ppvod.vod_picurl}" src="/images/blank.gif" alt="xx" />
+	//图片延时加载 FF.Lazyload.Box('frame'); <img class="lazy" data-original="{$ppvod.vod_picurl}" src="/images/blank.jpg" alt="xx" />
 	'Lazyload':{
 		'Show': function(){
 			$("img.lazy").lazyload({effect : "fadeIn"});

@@ -1631,7 +1631,7 @@ KE.util = {
 		if (width > 0) style += 'width:' + width + 'px;';
 		if (height > 0) style += 'height:' + height + 'px;';
 		var className = 'ke-' + type;
-		var html = '<img class="' + className + '" src="' + KE.g[id].skinsPath + 'common/blank.gif" ';
+		var html = '<img class="' + className + '" src="' + KE.g[id].skinsPath + 'common/blank.jpg" ';
 		if (style !== '') html += 'style="' + style + '" ';
 		html += 'kesrctag="' + escape(srcTag) + '" alt="" />';
 		return html;
@@ -3571,7 +3571,7 @@ KE.plugin['emoticons'] = {
 			previewDiv.style.right = 0;
 			var previewImg = KE.$$('img');
 			previewImg.className = 'ke-reset';
-			previewImg.src = path + '0.gif';
+			previewImg.src = path + '0.jpg';
 			previewImg.border = 0;
 			previewDiv.appendChild(previewImg);
 			wrapperDiv.appendChild(previewDiv);
@@ -3602,7 +3602,7 @@ KE.plugin['emoticons'] = {
 									previewDiv.style.left = '';
 									previewDiv.style.right = 0;
 								}
-								previewImg.src = path + num + '.gif';;
+								previewImg.src = path + num + '.jpg';;
 								this.className = 'ke-plugin-emoticons-cell ke-plugin-emoticons-cell-on';
 							};
 						})(j, num);
@@ -3666,7 +3666,7 @@ KE.plugin['emoticons'] = {
 		this.menu = menu;
 	},
 	exec : function(id, num) {
-		var src = KE.g[id].pluginsPath + 'emoticons/' + num + '.gif';
+		var src = KE.g[id].pluginsPath + 'emoticons/' + num + '.jpg';
 		var html = '<img src="' + src + '" kesrc="' + src + '" border="0" alt="" />';
 		KE.util.insertHtml(id, html);
 		this.menu.hide();

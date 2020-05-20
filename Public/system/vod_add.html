@@ -68,7 +68,7 @@ $(document).ready(function(){
   </tr>
   <tr>
     <td class="tl">影片TAG：</td>
-    <td class="tr"><input type="text" name="vod_keywords" id="vod_keywords"  maxlength="255" value="<notempty name="vod_keywords">{$vod_keywords}</notempty>" class="w300 xy_tag ti_5"> <img src="__PUBLIC__/images/admin/edit.gif" onClick="javascript:showtags(1);" class="navpoint" ></td>
+    <td class="tr"><input type="text" name="vod_keywords" id="vod_keywords"  maxlength="255" value="<notempty name="vod_keywords">{$vod_keywords}</notempty>" class="w300 xy_tag ti_5"> <img src="__PUBLIC__/images/admin/edit.jpg" onClick="javascript:showtags(1);" class="navpoint" ></td>
   </tr>
   <script language="javascript">
 	var $urln={:count($vod_url)};
@@ -94,7 +94,7 @@ $(document).ready(function(){
   <!-- --> 
   <tr>
     <td class="tl">增加播放地址：</td>
-    <td class="tr"><a href="javascript:addurl();" style="color:#FF0000;font-weight:bold;font-size:14px"><img src="__PUBLIC__/images/admin/add.gif" border="0">点击这里添加一组观看地址</a></td>
+    <td class="tr"><a href="javascript:addurl();" style="color:#FF0000;font-weight:bold;font-size:14px"><img src="__PUBLIC__/images/admin/add.jpg" border="0">点击这里添加一组观看地址</a></td>
   </tr>    
   <tr>
     <td class="tl">影片简介：</td>
@@ -104,7 +104,7 @@ $(document).ready(function(){
 <table border="0" cellpadding="0" cellspacing="0" class="table" id="tabs2" style="display:none">
   <tr>
     <td class="tl">推荐星级：</td>
-    <td class="tr" id="abc"><input name="vod_stars" id="vod_stars" type="hidden" value="<notempty name="vod_stars">{$vod_stars}</notempty>"><volist name="vod_starsarr" id="ajaxstar"><img src="__PUBLIC__/images/admin/star{$ajaxstar}.gif" onClick="addstars('vod',{$i});" id="star_{$i}" class="navpoint"></volist></td>
+    <td class="tr" id="abc"><input name="vod_stars" id="vod_stars" type="hidden" value="<notempty name="vod_stars">{$vod_stars}</notempty>"><volist name="vod_starsarr" id="ajaxstar"><img src="__PUBLIC__/images/admin/star{$ajaxstar}.jpg" onClick="addstars('vod',{$i});" id="star_{$i}" class="navpoint"></volist></td>
   </tr>  
   <tr>
     <td class="tl">标题颜色：</td>

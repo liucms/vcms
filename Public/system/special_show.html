@@ -41,10 +41,10 @@ function createhtml(id){
 <table border="0" cellpadding="0" cellspacing="0" class="table">
   <thead>
     <tr class="ct">
-      <th class="l" width="40">ID <eq name="orders" value="special_id desc"><a href="?s=Admin-Special-Show-type-id-order-asc"><img src="__PUBLIC__/images/admin/up.gif" border="0" alt="点击按ID升序排列"></a><else /><a href="?s=Admin-Special-Show-type-id-order-desc"><img src="__PUBLIC__/images/admin/down.gif" border="0" alt="点击按ID降序排列"></a></eq></th>
+      <th class="l" width="40">ID <eq name="orders" value="special_id desc"><a href="?s=Admin-Special-Show-type-id-order-asc"><img src="__PUBLIC__/images/admin/up.jpg" border="0" alt="点击按ID升序排列"></a><else /><a href="?s=Admin-Special-Show-type-id-order-desc"><img src="__PUBLIC__/images/admin/down.jpg" border="0" alt="点击按ID降序排列"></a></eq></th>
       <th class="l" >专题名称</th>
-      <th class="l" width="60">人气<eq name="orders" value="special_hits desc"><a href="?s=Admin-Special-Show-type-hits-order-asc"><img src="__PUBLIC__/images/admin/up.gif" border="0" alt="点击按人气升序排列"></a><else /><a href="?s=Admin-Special-Show-type-hits-order-desc"><img src="__PUBLIC__/images/admin/down.gif" border="0" alt="点击按人气降序排列"></a></eq></th>
-      <th class="l" width="90">更新时间<eq name="orders" value="special_addtime desc"><a href="?s=Admin-Special-Show-type-addtime-order-asc"><img src="__PUBLIC__/images/admin/up.gif" border="0" alt="点击按时间升序排列"></a><else /><a href="?s=Admin-Special-Show-type-addtime-order-desc"><img src="__PUBLIC__/images/admin/down.gif" border="0" alt="点击按时间降序排列"></a></eq></th>
+      <th class="l" width="60">人气<eq name="orders" value="special_hits desc"><a href="?s=Admin-Special-Show-type-hits-order-asc"><img src="__PUBLIC__/images/admin/up.jpg" border="0" alt="点击按人气升序排列"></a><else /><a href="?s=Admin-Special-Show-type-hits-order-desc"><img src="__PUBLIC__/images/admin/down.jpg" border="0" alt="点击按人气降序排列"></a></eq></th>
+      <th class="l" width="90">更新时间<eq name="orders" value="special_addtime desc"><a href="?s=Admin-Special-Show-type-addtime-order-asc"><img src="__PUBLIC__/images/admin/up.jpg" border="0" alt="点击按时间升序排列"></a><else /><a href="?s=Admin-Special-Show-type-addtime-order-desc"><img src="__PUBLIC__/images/admin/down.jpg" border="0" alt="点击按时间降序排列"></a></eq></th>
       <th class="l" width="80">专题权重</th>
       <th class="l" width="80">收录影视</th>
       <th class="l" width="80">收录资讯</th>
@@ -58,7 +58,7 @@ function createhtml(id){
     <td class="l pd"><if condition="C('url_html') gt 0"><a href="javascript:createhtml('{$ppvod.special_id}');" id="html_{$ppvod.special_id}"><font color="green">生成</font></a></if> <a href="{$ppvod.special_url}" target="_blank">{$ppvod.special_name}</a></td>
     <td class="l ct">{$ppvod.special_hits}</td>
     <td class="l ct">{$ppvod.special_addtime|date='Y-m-d',###}</td>
-    <td class="l ct"><volist name="ppvod['special_starsarr']" id="ajaxstar"><img src="__PUBLIC__/images/admin/star{$ajaxstar}.gif" onClick="setstars('Special',{$ppvod.special_id},{$i});" id="star_{$ppvod.special_id}_{$i}" class="navpoint"></volist></td>
+    <td class="l ct"><volist name="ppvod['special_starsarr']" id="ajaxstar"><img src="__PUBLIC__/images/admin/star{$ajaxstar}.jpg" onClick="setstars('Special',{$ppvod.special_id},{$i});" id="star_{$ppvod.special_id}_{$i}" class="navpoint"></volist></td>
     <td class="l ct"><a href="javascript:void(0)" onclick="divwindow('?s=Admin-Vod-Show-tid-<notempty name="ppvod.special_id">{$ppvod.special_id}</notempty>','添加专题到专题');">影视(<if condition="!empty($array_count['1-'.$ppvod['special_id']])">{:count($array_count['1-'.$ppvod['special_id']])}<else />0</if>)部</a></td>
     <td class="l ct"><a href="javascript:void(0)" onclick="divwindow('?s=Admin-News-Show-tid-<notempty name="ppvod.special_id">{$ppvod.special_id}</notempty>','添加专题到专题');">资讯(<if condition="!empty($array_count['2-'.$ppvod['special_id']])">{:count($array_count['2-'.$ppvod['special_id']])}<else />0</if>)篇</a></td>
     <td class="r ct"><a href="?s=Admin-Special-Add-id-{$ppvod.special_id}" title="点击修改专题">编辑</a> <a href="?s=Admin-Special-Del-id-{$ppvod.special_id}" onClick="return confirm('确定删除该专题吗?')" title="点击删除专题">删除</a>  <eq name="ppvod.special_status" value="1"><a href="?s=Admin-Special-Status-id-{$ppvod.special_id}-sid-0" title="点击隐藏专题">隐藏</a><else /><a href="?s=Admin-Special-Status-id-{$ppvod.special_id}-sid-1" title="点击显示专题"><font color="red">显示</font></a></eq></td>

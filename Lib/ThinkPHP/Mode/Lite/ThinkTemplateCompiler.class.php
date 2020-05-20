@@ -858,7 +858,7 @@ class ThinkTemplateCompiler {
                 $parseStr .= '<th>';
             }
             $showname[2] = isset($showname[2])?$showname[2]:$showname[0];
-            $parseStr .= '<a href="javascript:sortBy(\''.$property[0].'\',\'{$sort}\',\''.ACTION_NAME.'\')" title="按照'.$showname[2].'{$sortType} ">'.$showname[0].'<eq name="order" value="'.$property[0].'" ><img src="../Public/images/{$sortImg}.gif" width="12" height="17" border="0" align="absmiddle"></eq></a></th>';
+            $parseStr .= '<a href="javascript:sortBy(\''.$property[0].'\',\'{$sort}\',\''.ACTION_NAME.'\')" title="按照'.$showname[2].'{$sortType} ">'.$showname[0].'<eq name="order" value="'.$property[0].'" ><img src="../Public/images/{$sortImg}.jpg" width="12" height="17" border="0" align="absmiddle"></eq></a></th>';
         }
         if(!empty($action)) {//如果指定显示操作功能列
             $parseStr .= '<th >操作</th>';

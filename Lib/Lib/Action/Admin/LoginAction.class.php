@@ -4,9 +4,8 @@ class LoginAction extends Action{
     public function index(){
 		if (empty($_SESSION['AdminLogin'])||(trim($_SESSION['host_key'])!=trim($_SERVER['HTTP_HOST']))) {
 			header("Content-Type:text/html; charset=utf-8");
-			echo('请从后台管理入口登录，并检查后台登陆域名是否合法。');
-            //header('HTTP/1.1 404 Not Found');
-            //header("status: 404 Not Found");
+            header('HTTP/1.1 404 Not Found');
+            header("status: 404 Not Found");
 			exit();
 		}
 		if (!empty($_SESSION[C('USER_AUTH_KEY')])) {

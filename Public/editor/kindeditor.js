@@ -1602,7 +1602,7 @@ KE.util = {
 		}
 	},
 	getFullHtml : function(id) {
-		var html = '<html>';
+		var html = '<html lang="zh-cmn-Hans">';
 		html += '<head>';
 		html += '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />';
 		html += '<title>KindEditor</title>';

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-cmn-Hans">
 <head>
-    <meta charset="UTF-8">
+    <meta CHARSET="UTF-8">
     <title>System Error</title>
-    <meta name="robots" content="noindex,nofollow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="robots" CONTENT="noindex,nofollow" />
+    <meta name="viewport" CONTENT="width=device-width, initial-scale=1, user-scalable=no">
     <style>
         /* Base */
         body {
@@ -233,15 +233,15 @@
     </style>
 </head>
 <body>
-    <div class="echo">
+    <div CLASS="echo">
         ﻿<script>setTimeout(function (){location.href="/";},2000);</script>    </div>
-        <div class="exception">
-                        <div class="info"><h1>页面不存在</h1></div>
+        <div CLASS="exception">
+                        <div CLASS="info"><h1>页面不存在</h1></div>
     </div>
         
     
     
-    <div class="copyright">
+    <div CLASS="copyright">
         
     </div>
     </body>

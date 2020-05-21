@@ -241,13 +241,13 @@ abstract class Action extends Think
         C('HTML_CACHE_ON',false);
         if($status) { //发送成功信息
             // 成功操作后默认停留1秒
-            if(!$this->get('waitSecond')) { $this->assign('waitSecond',"6"); }
+            if(!$this->get('waitSecond')) { $this->assign('waitSecond',"1"); }
             // 默认操作成功自动返回操作前页面
             if(!$this->get('jumpUrl')) { $this->assign("jumpUrl",$_SERVER["HTTP_REFERER"]); }
             $this->display(C('TMPL_ACTION_SUCCESS'));
         }else{
             //发生错误时候默认停留3秒
-            if(!$this->get('waitSecond')) { $this->assign('waitSecond',"12"); }
+            if(!$this->get('waitSecond')) { $this->assign('waitSecond',"6"); }
             // 默认发生错误的话自动返回上页
             if(!$this->get('jumpUrl')) { $this->assign('jumpUrl',"javascript:history.back(-1);"); }
             $this->display(C('TMPL_ACTION_ERROR'));

@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="zh-cmn-Hans">
 	<head>
 		<meta charset="utf-8" />
 		<title>WordPaste</title>
@@ -29,7 +29,7 @@
 				var iframe = KE.$('wordIframe', document);
 				var iframeDoc = KE.util.getIframeDoc(iframe);
 				iframeDoc.open();
-				iframeDoc.write('<html><head><title>WordPaste</title></head>');
+				iframeDoc.write('<html lang="zh-cmn-Hans"><head><title>WordPaste</title></head>');
 				iframeDoc.write('<body style="background-color:#FFFFFF;font-size:12px;margin:2px;" />');
 				if (!KE.browser.IE) iframeDoc.write('<br />');
 				iframeDoc.write('</body></html>');

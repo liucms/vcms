@@ -389,7 +389,7 @@ class CreateAction extends BaseAction{
 			$this->jump('?s=Admin-Create-Baidu-google-'.$google.'-googleall-'.$googleall.'-baidu-'.$baidu.'-baiduall-'.$baiduall.'-page-'.($pgid+1).$id,'正在执行第('.$pgid.')页 Baidu Sitemap 地图生成成功！');
 		}
 		if (empty(substr($id, -1))) {
-			$this->assign("waitSecond",5);
+			$this->assign("waitSecond",3);
 			$this->assign("jumpUrl",'?s=Admin-Create-Show');
         	$this->success('Baidu Sitemap地图生成成功！<br />请通过<a href="https://ziyuan.baidu.com" target="_blank">百度站长平台</a>提交！');			
 		} else {
@@ -410,7 +410,7 @@ class CreateAction extends BaseAction{
 			$this->jump('?s=Admin-Create-Google-google-'.$google.'-googleall-'.$googleall.'-baidu-'.$baidu.'-baiduall-'.$baiduall.'-page-'.($pgid+1).$id,'正在执行第('.$pgid.')页 Google Sitemap 地图生成成功！');
 		}
 		if (empty(substr($id, -1))) {
-			$this->assign("waitSecond",5);
+			$this->assign("waitSecond",3);
 			$this->assign("jumpUrl",'?s=Admin-Create-Show');
         	$this->success('Google Sitemap地图生成成功！<br />请通过<a href="https://www.google.com/webmasters/tools" target="_blank">谷歌站长工具</a>提交！');
 		} else {

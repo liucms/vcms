@@ -41,7 +41,7 @@ $(document).ready(function(){
 <notempty name="dirlast"> 
   <tbody>  
   <tr class="firstalt">
-  <td colspan="5" class="r pd"><img src="__PUBLIC__/images/file/last.png"> <a href="?s=Admin-Pic-Show-id-{$dirlast}">上级目录</a> 当前目录: {$dirpath}</td>
+  <td colspan="5" class="r pd"><img src="__PUBLIC__/images/file/last.png" width="16" height="16"> <a href="?s=Admin-Pic-Show-id-{$dirlast}">上级目录</a> 当前目录: {$dirpath}</td>
   </tr>
   </tbody>
 </notempty>
@@ -58,7 +58,7 @@ $(document).ready(function(){
   <else />
   <tbody>
   <tr>
-  	<in name="ppvod.ext" value="jpg,gif,js,css,html,htm,php">
+  	<in name="ppvod.ext" value="png,jpg,gif,js,css,json,txt,html,eot,svg,ttf,woff,php">
     <td class="l pd"><img src="__PUBLIC__/images/file/{$ppvod.ext}.png" width="16" height="16"> {$ppvod.filename}</td>
     <else />
     <td class="l pd"><img src="__PUBLIC__/images/file/other.png" width="16" height="16"> {$ppvod.filename}</td>

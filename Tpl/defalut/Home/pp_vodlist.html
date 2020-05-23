@@ -23,9 +23,9 @@
       <dl class="clearfix">
         <dt>类型：</dt>
         <dd class="ff-gallery ff-text-right">
+          <a href="{:getlistname(1,'list_url')}">全部</a>
           <volist name="list_menu" id="ppvod">
-            <if condition="getlistson($ppvod['list_id']) eq 1"><a href="{$ppvod.list_url}" <eq name="ppvod.list_id" value="$list_id">class="active"</eq><eq name="ppvod.list_id" value="$list_pid">class="active"</eq> <eq name="ppvod.list_id" value="$list_pid">class="active"</eq>>{$ppvod.list_name}</a></if>
-            <volist name="ppvod.son" id="ppvod"><a href="{$ppvod.list_url}" <eq name="ppvod.list_id" value="$list_id">class="active"</eq><eq name="ppvod.list_id" value="$list_pid">class="active"</eq>>{$ppvod.list_name}</a></volist>
+            <volist name="ppvod.son" id="ppvod"><if condition="$ppvod['list_sid'] eq 1"><a href="{$ppvod.list_url}" <eq name="ppvod.list_id" value="$list_id">class="active"</eq><eq name="ppvod.list_id" value="$list_pid">class="active"</eq> <eq name="ppvod.list_id" value="$list_pid">class="active"</eq>>{$ppvod.list_name}</a></if></volist>
           </volist>
 
 		</dd>
@@ -51,7 +51,6 @@
             <span class="img"><img class="lazy" data-original="{$ppvod.vod_picurl}" src="{$tpl}static/images/no.jpg" alt="点击播放《{$ppvod.vod_name}》">
               <span class="score">{$ppvod.vod_addtime|date='Y-m-d',###}</span>
               <span class="lang"></span>
-				  
             </span>
             <span class="title">{$ppvod.vod_name}</span>
             <div class="i-item-txt">

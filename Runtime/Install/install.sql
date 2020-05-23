@@ -90,14 +90,17 @@ CREATE TABLE IF NOT EXISTS ff_list (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 INSERT INTO ff_list (list_id, list_pid, list_oid, list_sid, list_name, list_skin, list_skin_detail, list_skin_play, list_skin_type, list_dir, list_status, list_keywords, list_title, list_description, list_jumpurl) VALUES
-(9, 1, 9, 1, '动画视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'donghua', 1, '', '', '', ''),
-(8, 1, 8, 1, '犯罪视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'fanzui', 1, '', '', '', ''),
-(7, 1, 7, 1, '惊悚视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'jingsong', 1, '', '', '', ''),
-(6, 1, 6, 1, '恐怖视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'kongbu', 1, '', '', '', ''),
-(5, 1, 5, 1, '动作视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'dongzuo', 1, '', '', '', ''),
-(4, 1, 4, 1, '喜剧视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'xiju', 1, '', '', '', ''),
-(3, 0, 3, 1, '爱情', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'aiqing', 1, '', '', '', ''),
-(2, 0, 2, 1, '科幻', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'kehuan', 1, '', '', '', ''),
+(12, 2, 12, 2, '校园师生', 'pp_newslist', 'pp_news', 'pp_play', 'pp_vodtype', 'donghua', 1, '', '', '', ''),
+(11, 2, 11, 2, '都市激情', 'pp_newslist', 'pp_news', 'pp_play', 'pp_vodtype', 'donghua', 1, '', '', '', ''),
+(10, 1, 10, 1, '动画视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'donghua', 1, '', '', '', ''),
+(9, 1, 9, 1, '犯罪视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'fanzui', 1, '', '', '', ''),
+(8, 1, 8, 1, '惊悚视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'jingsong', 1, '', '', '', ''),
+(7, 1, 7, 1, '恐怖视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'kongbu', 1, '', '', '', ''),
+(6, 1, 6, 1, '动作视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'dongzuo', 1, '', '', '', ''),
+(5, 1, 5, 1, '喜剧视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'xiju', 1, '', '', '', ''),
+(4, 1, 4, 1, '爱情视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'aiqing', 1, '', '', '', ''),
+(3, 1, 3, 1, '科幻视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'kehuan', 1, '', '', '', ''),
+(2, 0, 2, 2, '小说', 'pp_newschannel', 'pp_vod', 'pp_play', 'pp_vodtype', 'xiaoshuo', 1, '', '', '', ''),
 (1, 0, 1, 1, '电影', 'pp_vodchannel', 'pp_vod', 'pp_play', 'pp_vodtype', 'dianying', 1, '', '', '', '');
 
 CREATE TABLE IF NOT EXISTS ff_news (

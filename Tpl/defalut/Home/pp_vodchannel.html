@@ -24,8 +24,7 @@
         <dd class="ff-gallery ff-text-right">
           <a href="{:getlistname(1,'list_url')}" class="active">全部</a>
           <volist name="list_menu" id="ppvod">
-            <if condition="getlistson($ppvod['list_id']) eq 1"><a href="{$ppvod.list_url}" <eq name="ppvod.list_id" value="$list_id">class="active"</eq><eq name="ppvod.list_id" value="$list_pid">class="active"</eq> <eq name="ppvod.list_id" value="$list_pid">class="active"</eq>>{$ppvod.list_name}</a></if>
-            <volist name="ppvod.son" id="ppvod"><a href="{$ppvod.list_url}" <eq name="ppvod.list_id" value="$list_id">class="active"</eq><eq name="ppvod.list_id" value="$list_pid">class="active"</eq>>{$ppvod.list_name}</a></volist>
+            <volist name="ppvod.son" id="ppvod"><if condition="$ppvod['list_sid'] eq 1"><a href="{$ppvod.list_url}" <eq name="ppvod.list_id" value="$list_id">class="active"</eq><eq name="ppvod.list_id" value="$list_pid">class="active"</eq> <eq name="ppvod.list_id" value="$list_pid">class="active"</eq>>{$ppvod.list_name}</a></if></volist>
           </volist>
 
 		</dd>
@@ -50,6 +49,8 @@
         <div class="i-item-txt">
           <div class="i-item-low ac">
             <em><i class="icon-star fl"></i>{$ppvod.vod_gold}</em>
+            <b>·</b>
+            <span>{$ppvod.list_name}</span>
           </div>
         </div>
 	  </a></li>

@@ -63,7 +63,7 @@ function get_domain($url){
 /*-------------------------------------------------字符串处理开始------------------------------------------------------------------*/
 // 过滤字符串
 function getWD($str){
-    preg_match_all('/([a-zA-Z0-9\_\～\！\：\。\，\《\》\?\=\-\,\.\:\|\/\s]+|[\x{4e00}-\x{9fff}]+|[\x{0800}-\x{4e00}]+|[\x{AC00}-\x{D7A3}]+|[\x{4e00}-\x{9fa5}]+)/u', $str, $match);
+    preg_match_all('/([a-zA-Z0-9\_\～\！\：\。\，\《\》\?\=\-\,\.\:\|\/\s]+|\<br \/\>+|\<p\>+|\<\/p\>+|[\x{4e00}-\x{9fff}]+|[\x{0800}-\x{4e00}]+|[\x{AC00}-\x{D7A3}]+|[\x{4e00}-\x{9fa5}]+)/u', $str, $match);
     return !empty($match[1])?implode($match[1]):'';
 }
 // 过滤字符串
@@ -399,6 +399,11 @@ function getcount($cid){
 		$where['vod_cid'] = array('gt',0);
 		$where['vod_addtime'] = array('gt',getxtime(1));//当天更新的影视
 		$count = $rs->where($where)->count('vod_id');
+	}elseif(888 == $cid){
+		$rs = M("News");
+		$where['news_cid'] = array('gt',0);
+		$where['news_addtime'] = array('gt',getxtime(1));//当天更新的新闻
+		$count = $rs->where($where)->count('news_id');
 	}elseif(0 == $cid){
 		$rs = M("Vod");
 		$where['vod_cid'] = array('gt',0);

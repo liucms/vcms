@@ -74,12 +74,12 @@ return array (
     'home:vod:show' => 
     array (
       0 => '{:module}_{:action}/{$_SERVER.REQUEST_URI|md5}',
-      1 => 5400.0,
+      1 => 5400,
     ),
     'home:news:show' => 
     array (
       0 => '{:module}_{:action}/{$_SERVER.REQUEST_URI|md5}',
-      1 => 5400.0,
+      1 => 5400,
     ),
     'home:vod:read' => 
     array (
@@ -137,7 +137,7 @@ return array (
   'play_collect_time' => '2',
   'play_collect_name' => '0',
   'play_collect' => true,
-  'play_video_encrypt' => '7ca6b5562e7597e03b873f219b378199',
+  'play_video_encrypt' => '85a84fb21486134ee105ecc04da07a3d',
   'url_html' => '0',
   'url_dir_a' => '2',
   'url_dir_b' => '5',

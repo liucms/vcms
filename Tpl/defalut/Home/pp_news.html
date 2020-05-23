@@ -25,6 +25,7 @@
         <h2 class="text-center">{$news_name}</h2>
         <div class="text-center">来源:{$news_inputer} {$news_addtime|date='Y-m-d H:i:s',###}</div>
         <div class="content">{:ff_content_url($news_content,$Tag,2)}</div>
+        <div class="prev-next"><include file="Home:home_news_detail_next" /></div>
       </div>
     </div>
     <div class="container">

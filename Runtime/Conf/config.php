@@ -137,7 +137,7 @@ return array (
   'play_collect_time' => '2',
   'play_collect_name' => '0',
   'play_collect' => true,
-  'play_video_encrypt' => 'ed3a98c8f20ce6399c64e36ea7f283e8',
+  'play_video_encrypt' => '131fdf1c4d250b5c2bf5bccc91842a84',
   'url_html' => '0',
   'url_dir_a' => '2',
   'url_dir_b' => '5',

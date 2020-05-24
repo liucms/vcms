@@ -15,59 +15,62 @@
 <include file="Home:pp_header" /> 
 <!-- // header end-->
 <div class="content">
-<div id="wrapper">
-<div class="container">
-  <div class="category">
-    <div class="container">
-      <dl class="clearfix">
-        <dt>类型：</dt>
-        <dd class="ff-gallery ff-text-right">
-          <a href="{:getlistname(2,'list_url')}" class="active">全部</a>
-          <volist name="list_menu" id="ppvod">
-            <volist name="ppvod.son" id="ppvod"><if condition="$ppvod['list_sid'] eq 2"><a href="{$ppvod.list_url}" <eq name="ppvod.list_id" value="$list_id">class="active"</eq><eq name="ppvod.list_id" value="$list_pid">class="active"</eq> <eq name="ppvod.list_id" value="$list_pid">class="active"</eq>>{$ppvod.list_name}</a></if></volist>
-          </volist>
+    <div id="wrapper">
+        <div class="container">
+            <div class="category">
+                <div class="container">
+                    <dl class="clearfix">
+                        <dt>类型：</dt>
+                        <dd class="ff-gallery ff-text-right">
+                            <a href="{:getlistname(2,'list_url')}" class="active">全部</a>
+                            <volist name="list_menu" id="ppvod">
+                            <volist name="ppvod.son" id="ppvod"><if condition="$ppvod['list_sid'] eq 2"><a href="{$ppvod.list_url}" <eq name="ppvod.list_id" value="$list_id">class="active"</eq><eq name="ppvod.list_id" value="$list_pid">class="active"</eq> <eq name="ppvod.list_id" value="$list_pid">class="active"</eq>>{$ppvod.list_name}</a></if></volist>
+                            </volist>
 
-		</dd>
-      </dl>
-    </div>
-  </div>
-  <div class="pageTop"></div>
-<!--循环开始-->
-<php>$cidarr=getlistarr($list_id);</php>
-<div class="panel">
-  <div class="panel-heading clearfix">
-    <div class="panel-heading clearfix"><h3 class="panel-title"><span>今天到目前已更新<strong>{:getcount('888')}</strong>部{$list_name}</span></h3></div>
-  </div>
-  <div class="panel-body">
-    <ul class="thumbnail-group thumbnail-group-sm clearfix">
-    <volist name="cidarr" id="ppcid" key="k">
-    <php>$news_list = ff_mysql_news('cid:'.$ppcid.';num:120;order:news_addtime desc');</php>
-    <notempty name="news_list">
-      <volist name="news_list" id="ppvod">
-      <li><a class="thumbnail" href="{$ppvod.news_readurl}">
-        <span class="img">
-          <img class="lazy" data-original="{$ppvod.news_picurl}" src="{$tpl}static/images/no.jpg" alt="{$ppvod.news_name}">
-          <span class="score">{$ppvod.news_addtime|date='Y-m-d',###}</span>
-          <span class="lang"></span>
-        </span>
-        <span class="title">{$ppvod.news_name}</span>
-        <div class="i-item-txt">
-          <div class="i-item-low ac">
-            <em><i class="icon-star fl"></i>{$ppvod.news_gold}</em>
-            <b>·</b>
-            <span>{$ppvod.list_name}</span>
-          </div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="pageTop"></div>
+            <!--循环开始-->
+            <php>$cidarr=getlistarr($list_id);</php>
+
+            <div class="container">
+                <div class="panel">
+                    <div class="panel-heading clearfix">
+                        <div class="panel-heading clearfix"><h3 class="panel-title"><span>今天到目前已更新<strong>{:getcount('888')}</strong>部{$list_name}</span></h3></div>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="thumbnail-group thumbnail-group-sm clearfix">
+                            <volist name="cidarr" id="ppcid" key="k">
+                            <php>$news_list = ff_mysql_news('cid:'.$ppcid.';num:120;order:news_addtime desc');</php>
+                            <notempty name="news_list">
+                            <volist name="news_list" id="ppvod">
+                            <li><a class="thumbnail" href="{$ppvod.news_readurl}">
+                                <span class="img">
+                                    <img class="lazy" data-original="{$ppvod.news_picurl}" src="{$tpl}static/images/no.jpg" alt="{$ppvod.news_name}">
+                                    <span class="score">{$ppvod.news_addtime|date='Y-m-d',###}</span>
+                                    <span class="lang"></span>
+                                </span>
+                                <span class="title">{$ppvod.news_name}</span>
+                                <div class="i-item-txt">
+                                    <div class="i-item-low ac">
+                                        <em><i class="icon-star fl"></i>{$ppvod.news_gold}</em>
+                                        <b>·</b>
+                                        <span>{$ppvod.list_name}</span>
+                                    </div>
+                                </div>
+                            </a></li></volist>
+                            </notempty>
+                            </volist>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-	  </a></li></volist>
-    </notempty>
-    </volist>
-
-    </ul>
-  </div>
-</div>
-</div>
-</div>
-<!--循环结束-->
+    </div>
+    <!--循环结束-->
 </div>
 <include file="Home:pp_footer" />
 

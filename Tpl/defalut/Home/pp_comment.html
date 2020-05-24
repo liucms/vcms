@@ -1,14 +1,14 @@
 <notempty name="cm_list">
-  <fflist name="cm_list" id="ppvod">
-    <div class="vio-pl-item"> <a href="#" class="vio-pl-user"> <img src="{$tpl}static/images/touxiang.png"> </a>
-      <div class="vio-pl-rbox">
-        <div class="vio-pl-tit">
-          <strong>{$ppvod.cm_floor}楼 {$ppvod.user_name|htmlspecialchars|remove_xss} </strong><span> {$ppvod.cm_addtime|date='Y-m-d H:i:s',###}</span>
+    <fflist name="cm_list" id="ppvod">
+    <div class="vio-pl-item"><a href="#" class="vio-pl-user"><img src="{$tpl}static/images/touxiang.png"></a>
+        <div class="vio-pl-rbox">
+            <div class="vio-pl-tit">
+                <strong>{$ppvod.cm_floor}楼 {$ppvod.user_name|htmlspecialchars|remove_xss} </strong><span> {$ppvod.cm_addtime|date='Y-m-d H:i:s',###}</span>
+            </div>
+            <div class="vio-pl-txt">
+                <p>{$ppvod.cm_content|htmlspecialchars|remove_xss}</p>
+            </div>
         </div>
-        <div class="vio-pl-txt">
-          <p>{$ppvod.cm_content|htmlspecialchars|remove_xss}</p>
-        </div>
-      </div>
     </div>
     </fflist>
     <if condition="$cm_count gt C('user_cmnum')"><div class="pages">{$cm_pages}</div></if>

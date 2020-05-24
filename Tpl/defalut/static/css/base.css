@@ -209,9 +209,10 @@ a.Down{padding-left:5px;}
 /*jquery延时加载*/
 .lazy{background:url(../images/loading.gif) center no-repeat}
 .pageTop { font-size:0; }
-.pageTop img{ width: 100%; min-height:60px;}
-.SiteMap li { display:inline;}
-.close_button{ width: 100%; height: 25px; background: #a43151;font-size: 15px;color: #fff;}
+.pageTop img{ width: 100%; min-height:60px; }
+.SiteMap li { display:inline; }
+.close_button{ width: 100%; height: 25px; background: #a43151;font-size: 15px;color: #fff; }
+
 @media (max-width:767px) {.fixediv {display:none}}
 /*新增样式*/
 .panel-title-vod {width:auto;height:100%;float:left;margin-left:15px;}

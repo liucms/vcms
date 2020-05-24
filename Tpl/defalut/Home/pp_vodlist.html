@@ -15,72 +15,74 @@
 <include file="Home:pp_header" /> 
 <!-- // header end-->
 <div class="content">
-<div id="wrapper">
-<div class="container">
+    <div id="wrapper">
+        <div class="container">
+            <div class="category">
+                <div class="container">
+                    <dl class="clearfix">
+                        <dt>类型：</dt>
+                        <dd class="ff-gallery ff-text-right">
+                            <a href="{:getlistname(1,'list_url')}">全部</a>
+                            <volist name="list_menu" id="ppvod">
+                            <volist name="ppvod.son" id="ppvod"><if condition="$ppvod['list_sid'] eq 1"><a href="{$ppvod.list_url}" <eq name="ppvod.list_id" value="$list_id">class="active"</eq><eq name="ppvod.list_id" value="$list_pid">class="active"</eq> <eq name="ppvod.list_id" value="$list_pid">class="active"</eq>>{$ppvod.list_name}</a></if></volist>
+                            </volist>
 
-  <div class="category">
-    <div class="container">
-      <dl class="clearfix">
-        <dt>类型：</dt>
-        <dd class="ff-gallery ff-text-right">
-          <a href="{:getlistname(1,'list_url')}">全部</a>
-          <volist name="list_menu" id="ppvod">
-            <volist name="ppvod.son" id="ppvod"><if condition="$ppvod['list_sid'] eq 1"><a href="{$ppvod.list_url}" <eq name="ppvod.list_id" value="$list_id">class="active"</eq><eq name="ppvod.list_id" value="$list_pid">class="active"</eq> <eq name="ppvod.list_id" value="$list_pid">class="active"</eq>>{$ppvod.list_name}</a></if></volist>
-          </volist>
-
-		</dd>
-      </dl>
-    </div>
-  </div>
-  <div class="pageTop"></div>
-  <php>
-    if($list_id){
-        $vod_list = ff_mysql_vod('cid:'.$list_id.';limit:30;page:true;order:vod_addtime desc,vod_id desc');
-        $page = !empty($vod_list[0]['page'])?$vod_list[0]['page']:'';
-    }
-  </php>
-  <div class="container">
-    <div class="panel">
-      <div class="panel-heading clearfix">
-        <h3 class="panel-title">筛选结果</h3>
-      </div>
-      <div class="panel-body">
-        <ul class="thumbnail-group thumbnail-group-sm clearfix">
-          <notempty name="vod_list"><volist name="vod_list" id="ppvod">
-          <li><a class="thumbnail" href="{$ppvod.vod_readurl}">
-            <span class="img"><img class="lazy" data-original="{$ppvod.vod_picurl}" src="{$tpl}static/images/no.jpg" alt="点击播放《{$ppvod.vod_name}》">
-              <span class="score">{$ppvod.vod_addtime|date='Y-m-d',###}</span>
-              <span class="lang"></span>
-            </span>
-            <span class="title">{$ppvod.vod_name}</span>
-            <div class="i-item-txt">
-              <div class="i-item-low ac">
-                <em><i class="icon-star fl"></i>{$ppvod.vod_gold}</em>
-                <b>·</b>
-                <span>{$list_name}</span>
-              </div>
+                        </dd>
+                    </dl>
+                </div>
             </div>
-          </a></li>
-        </volist>
-        <else />
-          该分类暂无数据！
-        </notempty>
-        </ul>
-      </div>
-      <div class="text-center">
-        <ul class="pagination hidden-xs">
-         {$page}
+            <div class="pageTop"></div>
+            <php>
+            if($list_id){
+                $vod_list = ff_mysql_vod('cid:'.$list_id.';limit:30;page:true;order:vod_addtime desc,vod_id desc');
+                $page = !empty($vod_list[0]['page'])?$vod_list[0]['page']:'';
+            }
+            </php>
 
-        </ul>
-        <ul class="pagination pager visible-xs">
-          {$page}
+            <div class="container">
+                <div class="panel">
+                    <div class="panel-heading clearfix">
+                        <h3 class="panel-title">筛选结果</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="thumbnail-group thumbnail-group-sm clearfix">
+                            <notempty name="vod_list"><volist name="vod_list" id="ppvod">
+                            <li><a class="thumbnail" href="{$ppvod.vod_readurl}">
+                                <span class="img">
+                                    <img class="lazy" data-original="{$ppvod.vod_picurl}" src="{$tpl}static/images/no.jpg" alt="点击播放《{$ppvod.vod_name}》">
+                                    <span class="score">{$ppvod.vod_addtime|date='Y-m-d',###}</span>
+                                    <span class="lang"></span>
+                                </span>
+                                <span class="title">{$ppvod.vod_name}</span>
+                                <div class="i-item-txt">
+                                    <div class="i-item-low ac">
+                                        <em><i class="icon-star fl"></i>{$ppvod.vod_gold}</em>
+                                        <b>·</b>
+                                        <span>{$list_name}</span>
+                                    </div>
+                                </div>
+                            </a></li>
+                            </volist>
+                            <else />
+                                该分类暂无数据！
+                            </notempty>
 
-        </ul>
-      </div>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <ul class="pagination hidden-xs">
+                        {$page}
+
+                        </ul>
+                        <ul class="pagination pager visible-xs">
+                        {$page}
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-</div>
 </div>
 <include file="Home:pp_footer" />  
 

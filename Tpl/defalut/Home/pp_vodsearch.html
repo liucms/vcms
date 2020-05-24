@@ -15,45 +15,46 @@
 <include file="Home:pp_header" />
 <!-- // header end-->
 <div class="content">
-   <div id="wrapper">
-    <div class="container">
-    <div class="panel">
-      <div class="panel-heading clearfix">
-        <h3 class="panel-title">搜索" <strong style="color:#4c8fe8;">{$search_wd}</strong>" 结果</h3>
-      </div>
-      <div class="panel-body">
-        <ul class="thumbnail-group thumbnail-group-sm clearfix">
-        <php>$vod_list = ff_mysql_vod('wd:'.$search_wd.';limit:30;page:true;order:vod_addtime desc');$page = !empty($vod_list[0]['page'])?$vod_list[0]['page']:'';</php>
-        <notempty name="vod_list.0.count">
-        <gt name="vod_list.0.count" value="0"><volist name="vod_list" id="ppvod">
-        <li><a class="thumbnail" href="{$ppvod.vod_readurl}">
-          <span class="img">
-            <img class="lazy" data-original="{$ppvod.vod_picurl}" src="{$tpl}static/images/no.jpg" alt="点击播放《{$ppvod.vod_name}》">
-            <span class="score">{$ppvod.vod_addtime|date='Y-m-d',###}</span>
-            <span class="lang"></span>
-          </span>
-          <span class="title">{$ppvod.vod_name}</span>
-		  </a>
-		</li></volist>
-        </gt> 
-        <else/>
-          <li>对不起,没有搜索到 <font color="#FF0000">{$search_wd}</font> 相关内容!</li>
-        </notempty>
-        </ul>
-      </div>
-      <div class="text-center">
-        <ul class="pagination hidden-xs">
-			{$page}
-        </ul>
-        <ul class="pagination pager visible-xs">
-          {$page}
-        </ul>
-      </div>
+    <div id="wrapper">
+        <div class="container">
+            <div class="panel">
+                <div class="panel-heading clearfix">
+                    <h3 class="panel-title">搜索" <strong style="color:#4c8fe8;">{$search_wd}</strong>" 结果</h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="thumbnail-group thumbnail-group-sm clearfix">
+                        <php>$vod_list = ff_mysql_vod('wd:'.$search_wd.';limit:30;page:true;order:vod_addtime desc');$page = !empty($vod_list[0]['page'])?$vod_list[0]['page']:'';</php>
+                        <notempty name="vod_list.0.count">
+                        <gt name="vod_list.0.count" value="0"><volist name="vod_list" id="ppvod">
+                        <li><a class="thumbnail" href="{$ppvod.vod_readurl}">
+                            <span class="img">
+                                <img class="lazy" data-original="{$ppvod.vod_picurl}" src="{$tpl}static/images/no.jpg" alt="点击播放《{$ppvod.vod_name}》">
+                                <span class="score">{$ppvod.vod_addtime|date='Y-m-d',###}</span>
+                                <span class="lang"></span>
+                            </span>
+                            <span class="title">{$ppvod.vod_name}</span>
+                        </a></li></volist>
+                        </gt> 
+                        <else/>
+                            <li>对不起,没有搜索到 <font color="#FF0000">{$search_wd}</font> 相关内容!</li>
+                        </notempty>
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <ul class="pagination hidden-xs">
+                    {$page}
+
+                    </ul>
+                    <ul class="pagination pager visible-xs">
+                    {$page}
+
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 <include file="Home:pp_footer" />  
 
-</div>
 </body>
 </html>

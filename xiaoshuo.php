@@ -17,8 +17,8 @@ if(!empty($_GET['id'])&&!empty($_GET['n'])) {
             $art_name = implode('',$art_title[1]);
             preg_match_all('/([a-zA-Z0-9]+|\<p\>+|\<\/p\>+|\<br\/\>+|\<br\>+|\<br \>+|\<br \/\>+|[\x{4e00}-\x{9fff}]+|[\x{0800}-\x{4e00}]+|[\x{AC00}-\x{D7A3}]+|[\x{4e00}-\x{9fa5}]+)/u', $value['art_content'], $art_content);
             if(empty($art_content[1])){continue;}
+            $art_contents = preg_replace(array('/<br\/>/u','/<br \/>/u','/<p><p>/u','/<\/p><\/p>/u','/\s/u','/nbspnbsp/u','/<p><br\/><\/p>/u','/<br\/>/u','/<p><\/p>/u'),array('</p><p>','</p><p>','<p>','</p>',''),'<p>'.implode('',$art_content[1]));
             $art_contents = (mb_strlen($art_contents,'utf-8')>12048?mb_strcut($art_contents,0,12048,'utf-8'):$art_contents);
-            $art_contents = preg_replace(array('/<br\/><br\/>/u','/\s/u','/nbspnbsp/u','/<p><br\/><\/p>/u','/<br\/>/u'),array('</p><p>','',''),implode('',$art_content[1]));
             if(empty($value['art_time'])){continue;}
             $art_addtime = strtotime(date('Y-m-d h:i:s',strtotime($value['art_time'])));
             preg_match_all('/([\x{4e00}-\x{9fff}]+)/u', trim($value['art_name']), $getPY);

@@ -32,7 +32,6 @@
       </dl>
     </div>
   </div>
-  <div class="pageTop"></div>
   <php>
     if($list_id){
         $news_list = ff_mysql_news('cid:'.$list_id.';limit:30;page:true;order:news_addtime desc,news_id desc');
@@ -40,6 +39,7 @@
     }
   </php>
   <div class="container">
+    <div class="pageTop"></div>
     <div class="panel">
       <div class="panel-heading clearfix">
         <h3 class="panel-title">筛选结果</h3>

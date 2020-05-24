@@ -19,6 +19,20 @@
 <!-- // content start-->
 <div class="content">
   <div id="wrapper">
+    <div class="category">
+      <div class="container">
+        <dl class="clearfix">
+          <dt>类型：</dt>
+          <dd class="ff-gallery ff-text-right">
+            <a href="{:getlistname(2,'list_url')}">全部</a>
+            <volist name="list_menu" id="ppvod">
+              <volist name="ppvod.son" id="ppvod"><if condition="$ppvod['list_sid'] eq 2"><a href="{$ppvod.list_url}" <eq name="ppvod.list_id" value="$list_id">class="active"</eq><eq name="ppvod.list_id" value="$list_pid">class="active"</eq> <eq name="ppvod.list_id" value="$list_pid">class="active"</eq>>{$ppvod.list_name}</a></if></volist>
+            </volist>
+
+		  </dd>
+        </dl>
+      </div>
+    </div>
     <div class="play">
       <div class="container">
         <div class="pageTop"></div>

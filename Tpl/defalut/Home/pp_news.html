@@ -35,10 +35,12 @@
             <div class="pageTop"></div>
             <div class="container">
                 <div class="panel">
-                    <h2 class="text-center">{$news_name}</h2>
-                    <div class="text-center page-header">来源:{$news_inputer} {$news_addtime|date='Y-m-d H:i:s',###}</div>
-                    <div class="content">{:ff_content_url($news_content,$Tag,2)}</div>
-                    <div class="prev-next"><include file="Home:home_news_detail_next" /></div>
+                    <div class="main-text-wrap">
+                        <h2 class="text-center">{$news_name}</h2>
+                        <div class="text-center page-header">来源:{$news_inputer} {$news_addtime|date='Y-m-d H:i:s',###}</div>
+                        <div class="read-content">{:ff_content_url($news_content,$Tag,2)}</div>
+                    </div>
+                    <div class="chapter-control dib-wrap"><include file="Home:home_news_detail_next" /></div>
                 </div>
             </div>
             <div class="container">
@@ -48,7 +50,7 @@
                     </div>
                     <div class="panel-body">
                         <ul class="thumbnail-group thumbnail-group-sm clearfix">
-                            <php>$gold_desc = ff_mysql_news('cid:'.$list_id.';limit:5;order:news_up desc,news_addtime desc');</php>
+                            <php>$gold_desc = ff_mysql_news('cid:'.$list_id.';limit:6;order:news_up desc,news_addtime desc');</php>
                             <volist name="gold_desc" id="ppvod">
                             <li><a class="thumbnail" href="{$ppvod.news_readurl}">
                                 <span class="img">

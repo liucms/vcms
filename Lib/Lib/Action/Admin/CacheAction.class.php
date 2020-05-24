@@ -106,7 +106,7 @@ class CacheAction extends BaseAction{
 		}						
 		echo('清除成功');
 	}	
-	//当天新闻
+	//当天小说
 	public function datadaynews(){
 		$where = array();
 		$where['news_addtime']= array('gt',getxtime(1));

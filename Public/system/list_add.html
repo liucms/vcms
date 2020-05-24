@@ -70,7 +70,7 @@ $(document).ready(function(){
     <li class="right"><select name="list_pid" id="list_pid" class="w120"><option value="0">现有分类</option><volist name="list_tree" id="ppvod"><option value="{$ppvod.list_id}" <eq name="ppvod.list_id" value="$list_pid">selected</eq>>{$ppvod.list_name}</option></volist></select> * 不选择将成为一级分类</li>
 </ul>
 <ul><li class="left">所属模型与排序：</li>
-    <li class="right"><select name="list_sid" id="list_sid" class="w120"><option value="1" <eq name="list_sid" value="1">selected</eq>>视频模型 | vod</option><option value="2" <eq name="list_sid" value="2">selected</eq>>新闻模块 | news</option><option value="9" <eq name="list_sid" value="9">selected</eq>>外部链接 | url</option></select>&nbsp;</li>
+    <li class="right"><select name="list_sid" id="list_sid" class="w120"><option value="1" <eq name="list_sid" value="1">selected</eq>>视频模型 | vod</option><option value="2" <eq name="list_sid" value="2">selected</eq>>小说模块 | news</option><option value="9" <eq name="list_sid" value="9">selected</eq>>外部链接 | url</option></select>&nbsp;</li>
 </ul>
 <ul><li class="left">栏目排序：</li>
     <li class="right"><input type="text" name="list_oid" id="list_oid" value="<notempty name="list_oid">{$list_oid}</notempty>" maxlength="3" class="w120"><label>越小越前面</label></li>
@@ -82,7 +82,7 @@ $(document).ready(function(){
      <li class="right"><input type="text" name="list_dir" id="list_dir" value="<notempty name="list_dir">{$list_dir}</notempty>" maxlength="40" class="w120"><label>留空则自动转为拼音</label></li>
 </ul>
 <ul><li class="left">本栏目使用的模板名：</li>
-     <li class="right"><input type="text" name="list_skin" id="list_skin" value="<notempty name="list_skin">{$list_skin}<else />pp_vodlist</notempty>" maxlength="40" error="* 使用模板名不能为空!" class="w120"><label><a href="javascript:" onClick="list_skin.value='pp_vodchannel';">影视大类</a> <a href="javascript:" onClick="list_skin.value='pp_vodlist';">影视小类</a> <a href="javascript:" onClick="list_skin.value='pp_newschannel';">新闻大类</a> <a href="javascript:" onClick="list_skin.value='pp_newslist';">新闻小类</a></label><span id="list_skin_error"></span></li>
+     <li class="right"><input type="text" name="list_skin" id="list_skin" value="<notempty name="list_skin">{$list_skin}<else />pp_vodlist</notempty>" maxlength="40" error="* 使用模板名不能为空!" class="w120"><label><a href="javascript:" onClick="list_skin.value='pp_vodchannel';">影视大类</a> <a href="javascript:" onClick="list_skin.value='pp_vodlist';">影视小类</a> <a href="javascript:" onClick="list_skin.value='pp_newschannel';">小说大类</a> <a href="javascript:" onClick="list_skin.value='pp_newslist';">小说小类</a></label><span id="list_skin_error"></span></li>
 </ul>
 <ul><li class="left">本栏目详情页模板名：</li>
      <li class="right"><input type="text" name="list_skin_detail" id="list_skin_detail" value="<notempty name="list_skin_detail">{$list_skin_detail}<else />pp_vod</notempty>" maxlength="40" class="w120"></li>

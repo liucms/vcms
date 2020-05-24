@@ -477,7 +477,7 @@ $(document).ready(function(){
 	//FF.History.List('history');
 	//影视顶踩初始化
 	FF.UpDown.Vod(Root+'index.php?s=Updown-'+FF.Home.Channel+'-id-'+Id);
-	//新闻顶踩初始化
+	//小说顶踩初始化
 	FF.UpDown.News(Root+'index.php?s=Updown-'+FF.Home.Channel+'-id-'+Id);	
 	//评论初始化
 	FF.Comment.Show(Root+"index.php?s=Cm-Show-sid-"+Sid+"-id-"+Id+"-p-1");

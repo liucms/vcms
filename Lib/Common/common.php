@@ -402,7 +402,7 @@ function getcount($cid){
 	}elseif(888 == $cid){
 		$rs = M("News");
 		$where['news_cid'] = array('gt',0);
-		$where['news_addtime'] = array('gt',getxtime(1));//当天更新的新闻
+		$where['news_addtime'] = array('gt',getxtime(1));//当天更新的小说
 		$count = $rs->where($where)->count('news_id');
 	}elseif(0 == $cid){
 		$rs = M("Vod");
@@ -1167,7 +1167,7 @@ function ff_mysql_vod($tag){
 	}
 	return $list;
 }
-/*数据调用-新闻资讯标签*/
+/*数据调用-小说资讯标签*/
 function ff_mysql_news($tag){
 	$search = array();$where = array();
 	$tag = ff_param_lable($tag);

@@ -1,6 +1,6 @@
 <?php
 class NewsAction extends BaseAction{	
-	// 新闻管理
+	// 小说管理
     public function show(){
 		$admin = array();
 		//获取地址栏参数
@@ -111,7 +111,7 @@ class NewsAction extends BaseAction{
 			$_POST["news_keywords"] = ff_tag_auto(getWDSrt($_POST["news_name"]),getWDSrt($_POST["news_content"]));
 		}
 	}	
-	// 新增新闻保存到数据库
+	// 新增小说保存到数据库
 	public function insert(){
 		$rs = D("News");
 		if($rs->create()){
@@ -125,7 +125,7 @@ class NewsAction extends BaseAction{
 		    $this->error($rs->getError());
 		}
 	}
-	// 新增新闻保存到数据库-后置操作
+	// 新增小说保存到数据库-后置操作
 	public function _after_insert(){
 		cookie('news_cid',intval($_POST["news_cid"]));
 		$this->success('文章添加成功,继续添加新文章！');
@@ -143,7 +143,7 @@ class NewsAction extends BaseAction{
 				//后置操作条件
 				$rs->$news_id = !empty($_POST["news_id"])?intval($_POST["news_id"]):0;
 			}else{
-				$this->error("修改新闻信息失败！");
+				$this->error("修改小说信息失败！");
 			}
 		}else{
 			$this->error($rs->getError());
@@ -156,9 +156,9 @@ class NewsAction extends BaseAction{
 		if($news_id){
 			$this->_after_add_update($news_id);
 			$this->assign("jumpUrl",$_SESSION['news_jumpurl']);
-			$this->success('修改新闻信息成功！');
+			$this->success('修改小说信息成功！');
 		}else{
-			$this->error('修改新闻信息失败！');
+			$this->error('修改小说信息失败！');
 		}		
 	}
 	//操作完毕后
@@ -220,13 +220,13 @@ class NewsAction extends BaseAction{
 		$where['topic_did'] = $id;
 		$rs->where($where)->delete();
 		unset($where);
-		//删除新闻评论
+		//删除小说评论
 		unset($where);
 		$rs = D("Cm");
 		$where['cm_cid'] = $id;
 		$where['cm_sid'] = 2;
 		$rs->where($where)->delete();			
-		//删除新闻TAG
+		//删除小说TAG
 		$rs = D("Tag");
 		$where['tag_id'] = $id;
 		$where['tag_sid'] = 2;
@@ -241,7 +241,7 @@ class NewsAction extends BaseAction{
 			@unlink(ff_data_url('news',$array['news_id'],$array['news_cid'],$array['news_name'],1));
 		}
 		unset($where);				
-		//删除新闻ID
+		//删除小说ID
 		$where['news_id'] = $id;
 		$rs = D("News");
 		$rs->where($where)->delete();
@@ -250,7 +250,7 @@ class NewsAction extends BaseAction{
 	// 批量转移文章
     public function pestcid(){
 		if(empty($_POST['ids'])){
-			$this->error('请选择需要转移的新闻！');
+			$this->error('请选择需要转移的小说！');
 		}	
 		$cid = intval($_POST['pestcid']);
 		if (getlistson($cid)) {
@@ -267,7 +267,7 @@ class NewsAction extends BaseAction{
     public function create(){
 		echo'<iframe scrolling="no" src="?s=Admin-Create-newsid-id-'.getWDSrt(implode(',',$_POST['ids'])).'" frameborder="0" style="display:none"></iframe>';
 		$this->assign("jumpUrl",$_SESSION['news_jumpurl']);
-		$this->success('批量生成新闻成功！');
+		$this->success('批量生成小说成功！');
     }				
 }
 ?>

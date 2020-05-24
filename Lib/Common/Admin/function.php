@@ -63,15 +63,15 @@ function gettplname($filename){
 	}elseif('pp_index.html' == $filename){
 	    return '网站首页模板';
 	}elseif('pp_news.html' == $filename){
-	    return '新闻内容模板';
+	    return '小说内容模板';
 	}elseif('pp_newschannel.html' == $filename){
-	    return '新闻频道列表模板';
+	    return '小说频道列表模板';
 	}elseif('pp_newslist.html' == $filename){
-	    return '新闻栏目列表模板';
+	    return '小说栏目列表模板';
 	}elseif('pp_newssearch.html' == $filename){
-	    return '新闻搜索模板';
+	    return '小说搜索模板';
 	}elseif('pp_newstag.html' == $filename){
-	    return '新闻标签模板';
+	    return '小说标签模板';
 	}elseif('pp_play.html' == $filename){
 	    return '播放页模板';
 	}elseif('pp_vod.html' == $filename){

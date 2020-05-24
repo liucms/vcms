@@ -67,8 +67,8 @@
   	</eq></td>
 </tr>
 <tr>
-  <td colspan="2" class="tr">生成新闻列表：
-	<select name="ids_list_2"><option value="{$list_news_all}">全部新闻</option><volist name="list_news" id="ppvod"><option value="{$ppvod.list_id}">{$ppvod.list_name}</option><volist name="ppvod['son']" id="ppvod"><option value="{$ppvod.list_id}">├ {$ppvod.list_name}</option></volist></volist></select>
+  <td colspan="2" class="tr">生成小说列表：
+	<select name="ids_list_2"><option value="{$list_news_all}">全部小说</option><volist name="list_news" id="ppvod"><option value="{$ppvod.list_id}">{$ppvod.list_name}</option><volist name="ppvod['son']" id="ppvod"><option value="{$ppvod.list_id}">├ {$ppvod.list_name}</option></volist></volist></select>
     <eq name="url_html" value="1">
   	<input type="button" value="生成" class="submit"  onClick="post('?s=Admin-Create-Newslist');" />
   	<else />
@@ -76,14 +76,14 @@
   	</eq></td>
 </tr>
 <tr>
-  <td class="tr">生成新闻内容：
-<select name="ids_2"><option value="{$list_news_all}">全部新闻</option><volist name="list_news" id="ppvod"><option value="{$ppvod.list_id}">{$ppvod.list_name}</option><volist name="ppvod['son']" id="ppvod"><option value="{$ppvod.list_id}">├ {$ppvod.list_name}</option></volist></volist></select>
+  <td class="tr">生成小说内容：
+<select name="ids_2"><option value="{$list_news_all}">全部小说</option><volist name="list_news" id="ppvod"><option value="{$ppvod.list_id}">{$ppvod.list_name}</option><volist name="ppvod['son']" id="ppvod"><option value="{$ppvod.list_id}">├ {$ppvod.list_name}</option></volist></volist></select>
     <eq name="url_html" value="1">
   	<input type="button" value="生成" class="submit"  onClick="post('?s=Admin-Create-Newsclass');" />
   	<else />
   	<input type="button" value="生成"  class="submit" onClick="post('?s=Admin-Create-Newsclass');" disabled/>
   	</eq></td>
-  <td class="tr">生成新闻内容页按时间：
+  <td class="tr">生成小说内容页按时间：
 	<select name="mday_2">
       <option value="1">当天</option>
       <option value="2">1天前</option>

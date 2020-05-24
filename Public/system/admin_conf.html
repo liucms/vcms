@@ -160,14 +160,14 @@ label{ color:#666666}
     <ul><li class="left">视频栏目页路径：</li>
     	<li class="right"><input type="text" name="config[url_vodlist]" id="url_vodlist" maxlength="150" value="{$url_vodlist}" class="w200 diri"> <select style="width:120px" onChange="dir_html('url_vodlist',this.value);"><option>常用结构</option><option value="list/{listid}/index{$html_file_suffix}">1.list/id/</option><option value="list/{md5}/index{$html_file_suffix}">2.list/md5值/</option></option><option value="list/{listdir}/index{$html_file_suffix}">3.list/listdir/</option><option value="list/{listid}{$html_file_suffix}">4.list/id{$html_file_suffix}</option><option value="list/{md5}{$html_file_suffix}">5.list/md5{$html_file_suffix}</option><option value="list/{listdir}{$html_file_suffix}">6.list/listdir{$html_file_suffix}</option></select> 变量：<a href="javascript:" onClick="dir_html_add('url_vodlist','{listid}');" title="分类ID" class="dir">{listid}</a> <a href="javascript:" onClick="dir_html_add('url_vodlist','{listdir}');" title="分类英文名" class="dir">{listdir}</a> <a href="javascript:" onClick="dir_html_add('url_vodlist','{md5}');" title="影片md5(id)" class="dir">{md5}</a> <a href="javascript:" onClick="dir_html_add('url_vodlist','index{$html_file_suffix}');" title="默认首页" class="dir">index{$html_file_suffix}</a></li>            
     </ul>
-    <ul><li class="left">新闻栏目页路径：</li>
+    <ul><li class="left">小说栏目页路径：</li>
     	<li class="right"><input type="text" name="config[url_newslist]" id="url_newslist" maxlength="150" value="{$url_newslist}" class="w200 diri"> <select style="width:120px" onChange="dir_html('url_newslist',this.value);"><option>常用结构</option><option value="list/{listid}/index{$html_file_suffix}">1.list/id/</option><option value="list/{md5}/index{$html_file_suffix}">2.list/md5值/</option></option><option value="list/{listdir}/index{$html_file_suffix}">3.list/listdir/</option><option value="list/{listid}{$html_file_suffix}">4.list/id{$html_file_suffix}</option><option value="list/{md5}{$html_file_suffix}">5.list/md5{$html_file_suffix}</option><option value="list/{listdir}{$html_file_suffix}">6.list/listdir{$html_file_suffix}</option></select> 变量：<a href="javascript:" onClick="dir_html_add('url_newslist','{listid}');" title="分类ID" class="dir">{listid}</a> <a href="javascript:" onClick="dir_html_add('url_newslist','{listdir}');" title="分类英文名" class="dir">{listdir}</a> <a href="javascript:" onClick="dir_html_add('url_newslist','{md5}');" title="影片md5(id)" class="dir">{md5}</a> <a href="javascript:" onClick="dir_html_add('url_newslist','index{$html_file_suffix}');" title="默认首页" class="dir">index{$html_file_suffix}</a></li>            
     </ul>     
     </div>      
     <ul><li class="left">视频内容页路径：</li>
     	<li class="right"><input type="text" name="config[url_voddata]" id="url_voddata" maxlength="150" value="{$url_voddata}" class="w200 diri"> <select style="width:120px" onChange="dir_html('url_voddata',this.value);"><option>常用结构</option><option value="vod/{id}/index{$html_file_suffix}">1.vod/id/</option><option value="vod/{md5}/index{$html_file_suffix}">2.vod/md5值/</option><option value="vod/{pinyin}/index{$html_file_suffix}">3.vod/拼音/</option><option value="vod/{id}{$html_file_suffix}">4.vod/id{$html_file_suffix}</option><option value="vod/{md5}{$html_file_suffix}">5.vod/md5{$html_file_suffix}</option><option value="vod/{pinyin}{$html_file_suffix}">6.vod/拼音{$html_file_suffix}</option><option value="{listid}/{id}{$html_file_suffix}">7.listid/id{$html_file_suffix}</option><option value="{listdir}/{pinyin}/index{$html_file_suffix}">8.listdir/拼音/</option></select> 变量：<a href="javascript:" onClick="dir_html_add('url_voddata','{listid}');" title="分类ID值" class="dir">{listid}</a> <a href="javascript:" onClick="dir_html_add('url_voddata','{listdir}');" title="分类英文名" class="dir">{listdir}</a> <a href="javascript:" onClick="dir_html_add('url_voddata','{pinyin}');" title="影片拼音" class="dir">{pinyin}</a> <a href="javascript:" onClick="dir_html_add('url_voddata','{id}');" title="影片ID" class="dir">{id}</a> <a href="javascript:" onClick="dir_html_add('url_voddata','{md5}');" title="影片md5(id)" class="dir">{md5}</a> <a href="javascript:" onClick="dir_html_add('url_voddata','index{$html_file_suffix}');" title="默认首页" class="dir">index{$html_file_suffix}</a></li>            
     </ul>
-    <ul><li class="left">新闻内容页路径：</li>
+    <ul><li class="left">小说内容页路径：</li>
     	<li class="right"><input type="text" name="config[url_newsdata]" id="url_newsdata" maxlength="150" value="{$url_newsdata}" class="w200 diri"> <select style="width:120px" onChange="dir_html('url_newsdata',this.value);"><option>常用结构</option><option value="news/{id}/index{$html_file_suffix}">1.news/id/</option><option value="news/{md5}/index{$html_file_suffix}">2.news/md5值/</option><option value="news/{pinyin}/index{$html_file_suffix}">3.news/拼音/</option><option value="news/{id}{$html_file_suffix}">4.news/id{$html_file_suffix}</option><option value="news/{md5}{$html_file_suffix}">5.news/md5{$html_file_suffix}</option><option value="news/{pinyin}{$html_file_suffix}">6.news/拼音{$html_file_suffix}</option><option value="{listid}/{id}{$html_file_suffix}">7.listid/id{$html_file_suffix}</option><option value="{listdir}/{pinyin}/index{$html_file_suffix}">8.listdir/拼音/</option></select> 变量：<a href="javascript:" onClick="dir_html_add('url_newsdata','{listid}');" title="分类ID值" class="dir">{listid}</a> <a href="javascript:" onClick="dir_html_add('url_newsdata','{listdir}');" title="分类英文名" class="dir">{listdir}</a> <a href="javascript:" onClick="dir_html_add('url_newsdata','{pinyin}');" title="影片拼音" class="dir">{pinyin}</a> <a href="javascript:" onClick="dir_html_add('url_newsdata','{id}');" title="影片ID" class="dir">{id}</a> <a href="javascript:" onClick="dir_html_add('url_newsdata','{md5}');" title="影片md5(id)" class="dir">{md5}</a> <a href="javascript:" onClick="dir_html_add('url_newsdata','index{$html_file_suffix}');" title="默认首页" class="dir">index{$html_file_suffix}</a></li>            
     </ul>
     <ul><li class="left">是否生成播放页：</li>
@@ -215,16 +215,16 @@ label{ color:#666666}
     <ul><li class="left">视频TAG页规则：</li>
     	<li class="right"><input type="text" name="config[rewrite_vodtag]" id="rewrite_vodtag" maxlength="150" value="{$rewrite_vodtag|default='/tag-vod-wd-$wd-p-$page'}" class="w250 diri"> 变量: $wd，$page</li>          
     </ul>
-    <ul><li class="left">新闻栏目页规则：</li>
+    <ul><li class="left">小说栏目页规则：</li>
     	<li class="right"><input type="text" name="config[rewrite_newslist]" id="rewrite_newslist" maxlength="150" value="{$rewrite_newslist|default='/news-show-id-$id-p-$page'}" class="w250 diri"> 变量: $id，$page</li> 
     </ul>
-    <ul><li class="left">新闻内容页规则：</li>
+    <ul><li class="left">小说内容页规则：</li>
     	<li class="right"><input type="text" name="config[rewrite_newsdetail]" id="rewrite_newsdetail" maxlength="150" value="{$rewrite_newsdetail|default='/news-read-id-$id'}" class="w250 diri"> 变量: $id</li>            
     </ul>
-     <ul><li class="left">新闻搜索页规则：</li>
+     <ul><li class="left">小说搜索页规则：</li>
     	<li class="right"><input type="text" name="config[rewrite_newssearch]" id="rewrite_newssearch" maxlength="150" value="{$rewrite_newssearch|default='/news-search-wd-$wd-p-$page'}" class="w250 diri"> 变量: $wd，$page</li>            
     </ul>
-    <ul><li class="left">新闻TAG页规则：</li>
+    <ul><li class="left">小说TAG页规则：</li>
     	<li class="right"><input type="text" name="config[rewrite_newstag]" id="rewrite_newstag" maxlength="150" value="{$rewrite_newstag|default='/tag-shown-wd-$wd-p-$page'}" class="w250 diri"> 变量: $wd，$page</li>          
     </ul>
     <ul><li class="left">专题栏目页规则：</li>
@@ -254,7 +254,7 @@ label{ color:#666666}
      <ul><li class="left">视频内容模块：</li>
     	<li class="right"><input type="text" name="config[data_cache_vod]" id="data_cache_vod" maxlength="8" value="{$data_cache_vod}" class="w70"><label>推荐开启，时间设置为86400秒，一天，表数据更新时缓存数据会同步，设为0该模块将不启用，单位秒</label></li>
     </ul> 
-     <ul><li class="left">新闻内容模块：</li>
+     <ul><li class="left">小说内容模块：</li>
     	<li class="right"><input type="text" name="config[data_cache_news]" id="data_cache_news" maxlength="8" value="{$data_cache_news}" class="w70"><label>推荐开启，时间设置为86400秒，一天，表数据更新时缓存数据会同步，设为0该模块将不启用，单位秒</label></li>
     </ul>
      <ul><li class="left">专题内容模块：</li>
@@ -263,7 +263,7 @@ label{ color:#666666}
      <ul><li class="left">视频循环调用标签：</li>
     	<li class="right"><input type="text" name="config[data_cache_vodforeach]" id="data_cache_vodforeach" maxlength="8" value="{$data_cache_vodforeach}" class="w70"><label>推荐开启，时间设置为600秒，开启后需要手动执行更新操作才会清除，设为0该模块将不启用</label></li>
     </ul>
-     <ul><li class="left">新闻循环调用标签：</li>
+     <ul><li class="left">小说循环调用标签：</li>
     	<li class="right"><input type="text" name="config[data_cache_newsforeach]" id="data_cache_newsforeach" maxlength="8" value="{$data_cache_newsforeach}" class="w70"><label>推荐开启，时间设置为600秒，开启后需要手动执行更新操作才会清除，设为0该模块将不启用</label></li>
     </ul>
      <ul><li class="left">专题循环调用标签：</li>

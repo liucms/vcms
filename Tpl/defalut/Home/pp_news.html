@@ -35,7 +35,7 @@
         </div>
         <div class="panel-body">
           <ul class="thumbnail-group thumbnail-group-sm clearfix">
-          <php>$gold_desc = ff_mysql_news('cid:'.$list_id.';limit:15;order:news_up desc,news_addtime desc');</php>
+          <php>$gold_desc = ff_mysql_news('cid:'.$list_id.';limit:5;order:news_up desc,news_addtime desc');</php>
           <volist name="gold_desc" id="ppvod">
             <li><a class="thumbnail" href="{$ppvod.news_readurl}">
               <span class="img">
@@ -69,6 +69,7 @@
     </div>
   </div>
 </div>
+{$news_hits_insert}
 <include file="Home:pp_footer" />
 
 </body>

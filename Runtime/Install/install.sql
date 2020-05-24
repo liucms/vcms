@@ -90,8 +90,12 @@ CREATE TABLE IF NOT EXISTS ff_list (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 INSERT INTO ff_list (list_id, list_pid, list_oid, list_sid, list_name, list_skin, list_skin_detail, list_skin_play, list_skin_type, list_dir, list_status, list_keywords, list_title, list_description, list_jumpurl) VALUES
-(12, 2, 12, 2, '校园师生', 'pp_newslist', 'pp_news', 'pp_play', 'pp_vodtype', 'donghua', 1, '', '', '', ''),
-(11, 2, 11, 2, '都市激情', 'pp_newslist', 'pp_news', 'pp_play', 'pp_vodtype', 'donghua', 1, '', '', '', ''),
+(16, 2, 16, 2, '科学幻想', 'pp_newslist', 'pp_news', 'pp_play', 'pp_vodtype', 'huanxiang', 1, '', '', '', ''),
+(15, 2, 15, 2, '经验故事', 'pp_newslist', 'pp_news', 'pp_play', 'pp_vodtype', 'gushi', 1, '', '', '', ''),
+(14, 2, 14, 2, '不伦恋情', 'pp_newslist', 'pp_news', 'pp_play', 'pp_vodtype', 'lianqing', 1, '', '', '', ''),
+(13, 2, 13, 2, '都市生活', 'pp_newslist', 'pp_news', 'pp_play', 'pp_vodtype', 'dushi', 1, '', '', '', ''),
+(12, 2, 12, 2, '校园师生', 'pp_newslist', 'pp_news', 'pp_play', 'pp_vodtype', 'xiaoyuan', 1, '', '', '', ''),
+(11, 2, 11, 2, '玄幻仙侠', 'pp_newslist', 'pp_news', 'pp_play', 'pp_vodtype', 'xuanhuan', 1, '', '', '', ''),
 (10, 1, 10, 1, '动画视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'donghua', 1, '', '', '', ''),
 (9, 1, 9, 1, '犯罪视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'fanzui', 1, '', '', '', ''),
 (8, 1, 8, 1, '惊悚视频', 'pp_vodlist', 'pp_vod', 'pp_play', 'pp_vodtype', 'jingsong', 1, '', '', '', ''),

@@ -126,10 +126,10 @@ function getPinyin($s0){
 
 function fixHtml($srt){
     $srt = preg_replace('/<[^>]*$/','',$srt);
-    preg_match_all('/<([a-z]+)(?: .*)?(?<![/|/ ])>/iU', $srt, $result);
+    preg_match_all('/<([a-z]+)(?: .*)?(?<![\/|\/ ])>/iU', $srt, $result);
     if($result){
         $opentags = $result[1];
-        preg_match_all('/</([a-z]+)>/iU', $srt, $result);
+        preg_match_all('/<\/([a-z]+)>/iU', $srt, $result);
         if($result){
             $closetags = $result[1];
             $len_opened = count($opentags);

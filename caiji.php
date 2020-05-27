@@ -4,42 +4,50 @@ date_default_timezone_set("PRC");
 if(!empty($_GET['id'])&&!empty($_GET['n'])) {
     $sum = 3;
     $data = array();
-    $list = array(3,5,17,6,7,13,12,8);
-    $name = array('YBD','ZP','ZM','YZ','OM','YM','WM','DM');
-    if(empty($list[$_GET['n']-1])) { exit('采集完成'); }
-    if((($sum+1)-intval($_GET['id']))>0) { 
+    $list = array(3,5,17,6,7,13,12,8); // 采集ID
+    $ltid = array(3,4,5,6,7,8,9,10); // 绑定ID
+    $name = array('YBD','ZP','ZM','YZ','OM','YM','WM','DM'); // 番号ID
+    if(empty($list[intval($_GET['n'])-1])) { exit('采集完成'); }
+    if(intval($_GET['id'])<($sum+1)) {
         $caiji = getVideo($list[intval($_GET['n'])-1], (($sum+1)-intval($_GET['id'])));
     }
     if(!empty($caiji)&&is_array($caiji)) {
         foreach($caiji['data'] as $key => $value) {
             if(strtotime($value['vod_addtime'])<(strtotime(date("Y-m-d")))){continue;}
-            preg_match_all('/([a-zA-Z0-9\:\_\/\-\.]+jpg)/u', $value['vod_pic'], $vod_pic);
+
+            preg_match_all('/([a-zA-Z0-9\:\_\/\-\.]+[png|jpg])/u', $value['vod_pic'], $vod_pic);
             if(empty($vod_pic[1])){continue;}
             $vod_pic = $vod_pic[1][0];
+
             preg_match_all('/([a-zA-Z0-9\_\～\-\.\s]+|[\x{4e00}-\x{9fff}]+|[\x{0800}-\x{4e00}]+|[\x{AC00}-\x{D7A3}]+|[\x{4e00}-\x{9fa5}]+)/u', str_replace(array('骗','下','迷','药','强','奸'),array('带'),$value['vod_name']), $vod_name);
             if(empty($vod_name[0])){continue;}
-            $vod_all = explode("番号", implode('',$vod_name[1]));
-            $vod_name = (empty($vod_all[1])?array($vod_all[0],$name[$_GET['n']-1].'_'.strtoupper(shortUrl(md5($vod_all[0])))):array($vod_all[0],strtoupper(shortUrl(md5($vod_all[1])))));
+            $vod_name = explode("番号", implode('',$vod_name[1]));
+            $vod_name = (empty($vod_name[1])?array($vod_name[0],$name[intval($_GET['n'])-1].'_'.strtoupper(shortUrl(md5($vod_name[0])))):array($vod_name[0],strtoupper(shortUrl(md5($vod_name[1])))));
+
             preg_match_all('/([a-zA-Z0-9\:\_\/\-\.]+m3u8)/u', $value['vod_url'], $vod_url);
             if(empty($vod_url[1])){continue;}
             $vod_url = $vod_url[1][0];
+
             preg_match_all('/([\x{4e00}-\x{9fff}]+)/u', $value['vod_area'], $vod_area);
             if(empty($vod_area[1])){continue;}
             $vod_area = $vod_area[1][0];
+
             if(empty($value['vod_addtime'])){continue;}
-            $vod_addtime = strtotime(date('Y-m-d h:i:s',strtotime($value['vod_addtime'])));
+            $vod_addtime = strtotime($value['vod_addtime']);
+
             preg_match_all('/([\x{4e00}-\x{9fff}]+)/u', trim($value['vod_name']), $getPY);
             $getPY = !empty($getPY[1])?getPinyin(implode('',$getPY[1])):'G';
-            $data[] = '('.(intval($_GET['n'])+2).', \''.htmlspecialchars(trim($vod_name[0]),ENT_QUOTES).'\', \''.htmlspecialchars(trim($vod_name[1]),ENT_QUOTES).'\', \'\', \'\', \'\', \'\', \''.htmlspecialchars(trim($vod_name[0]),ENT_QUOTES).'\', \''.trim($vod_pic).'\', \''.$vod_area.'\', \'\', 0, \'0\', \'\', 1, \''.$vod_addtime.'\', '.mt_rand(6050,9608).', '.mt_rand(508,809).', '.mt_rand(50,90).', '.mt_rand(5,9).', \''.$vod_addtime.'\', 1, 1, '.mt_rand(2080,4090).', '.mt_rand(108,809).', \'m3u8\', \'\', \''.$vod_url.'\', \'admin\', \'\', \'\', \''.$getPY.'\', \'\', \''.mt_rand(6,9).'.'.mt_rand(2,5).'\', '.mt_rand(3050,7608).', 1, 0, 0, 0)';
+
+            $data[] = '('.($ltid[intval($_GET['n'])-1]).', \''.htmlspecialchars(trim($vod_name[0]),ENT_QUOTES).'\', \''.htmlspecialchars(trim($vod_name[1]),ENT_QUOTES).'\', \'\', \'\', \'\', \'\', \''.htmlspecialchars(trim($vod_name[0]),ENT_QUOTES).'\', \''.trim($vod_pic).'\', \''.trim($vod_area).'\', \'\', 0, \'0\', \'\', 1, \''.trim($vod_addtime).'\', '.mt_rand(6050,9608).', '.mt_rand(508,809).', '.mt_rand(50,90).', '.mt_rand(5,9).', \''.trim($vod_addtime).'\', 1, 1, '.mt_rand(2080,4090).', '.mt_rand(108,809).', \'m3u8\', \'\', \''.trim($vod_url).'\', \'admin\', \'\', \'\', \''.trim($getPY).'\', \'\', \''.mt_rand(6,9).'.'.mt_rand(2,5).'\', '.mt_rand(3050,7608).', 1, 0, 0, 0)';
         }
         if(!empty($data)&&is_array($data)) {
             $data = 'INSERT INTO `ff_vod` (`vod_cid`, `vod_name`, `vod_title`, `vod_keywords`, `vod_color`, `vod_actor`, `vod_director`, `vod_content`, `vod_pic`, `vod_area`, `vod_language`, `vod_year`, `vod_continu`, `vod_total`, `vod_isend`, `vod_addtime`, `vod_hits`, `vod_hits_day`, `vod_hits_week`, `vod_hits_month`, `vod_hits_lasttime`, `vod_stars`, `vod_status`, `vod_up`, `vod_down`, `vod_play`, `vod_server`, `vod_url`, `vod_inputer`, `vod_reurl`, `vod_jumpurl`, `vod_letter`, `vod_skin`, `vod_gold`, `vod_golder`, `vod_isfilm`, `vod_filmtime`, `vod_length`, `vod_weekday`) VALUES '.implode(',',$data).';';
-            //file_put_contents('video/video'.intval($_GET['n']).'.txt', $data.PHP_EOL, FILE_APPEND|LOCK_EX);
+            //file_put_contents('video/video'.$ltid[intval($_GET['n'])-1].'.txt', $data.PHP_EOL, FILE_APPEND|LOCK_EX);
             // 配置数据库连接
-            getInsert('127.0.0.1','root','root','root',$data);
+            //getInsert('127.0.0.1','root','root','root',$data);
         }
     }
-    $pid = (($sum+1)-intval($_GET['id']))>0?array((intval($_GET['id'])+1),intval($_GET['n'])):array(1,(intval($_GET['n'])+1));
+    $pid = ((intval($_GET['id'])+1)>$sum)?array(1,intval($_GET['n'])+1):array((intval($_GET['id'])+1),intval($_GET['n']));
     echo '第 '.intval($_GET['id']).' 页 栏目 '.intval($_GET['n']).PHP_EOL.'<script>window.location.href="/caiji.php?id='.$pid[0].'&n='.$pid[1].'";</script>';
 }
 
@@ -51,7 +59,7 @@ function getVideo($cid = 1, $p = 1) {
     return '404';
 }
 
-function getInsert($host,$user,$passwd,$db,$sql){
+function getInsert($host, $user, $passwd, $db, $sql){
     try {
         $conn = new PDO('mysql:host='.$host.';dbname='.$db, $user, $passwd);
         $conn->query("set names utf8");
@@ -150,5 +158,5 @@ function getPinyin($s0){
 	if($asc>=-12556 and $asc<=-11848)return "X";
 	if($asc>=-11847 and $asc<=-11056)return "Y";
 	if($asc>=-11055 and $asc<=-10247)return "Z";
-	return 0;//null
+	return 0;
 }

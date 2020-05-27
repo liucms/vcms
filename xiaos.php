@@ -4,47 +4,53 @@ date_default_timezone_set("PRC");
 if(!empty($_GET['id'])&&!empty($_GET['n'])) {
     $sum = 3;
     $data = array();
-    $list = array(19,18,21,22,23,24);
-    if(empty($list[$_GET['n']-1])) { exit('采集完成'); }
-    if((($sum+1)-intval($_GET['id']))>0) { 
+    $list = array(17,18,19,20,21,22); // 采集ID
+    $ltid = array(11,12,13,14,15,16); // 绑定ID
+    if(empty($list[intval($_GET['n'])-1])) { exit('采集完成'); }
+    if(intval($_GET['id'])<($sum+1)) {
         $caiji = getNews($list[intval($_GET['n'])-1], (($sum+1)-intval($_GET['id'])));
     }
     if(!empty($caiji)&&is_array($caiji)) {
         foreach($caiji['list'] as $key => $value) {
             if(strtotime($value['art_time'])<(strtotime(date("Y-m-d")))){continue;}
-            preg_match_all('/([a-zA-Z0-9\_\～\-\.\s]+|[\x{4e00}-\x{9fff}]+|[\x{0800}-\x{4e00}]+|[\x{AC00}-\x{D7A3}]+|[\x{4e00}-\x{9fa5}]+)/u', str_replace(array('骗','下','迷','药','强','奸'),array('带'),$value['art_title']), $art_title);
-            if(empty($art_title[0])){continue;}
+
+            preg_match_all('/([a-zA-Z0-9\_\～\-\.\s]+|[\x{4e00}-\x{9fff}]+|[\x{0800}-\x{4e00}]+|[\x{AC00}-\x{D7A3}]+|[\x{4e00}-\x{9fa5}]+)/u', str_replace(array('骗','下','迷','药','强','奸'),array('带'),$value['art_name']), $art_title);
+            if(empty($art_title[1])){continue;}
             $art_name = implode('',$art_title[1]);
+
             preg_match_all('/([a-zA-Z0-9]+|\<p\>+|\<\/p\>+|\<br\/\>+|\<br\>+|\<br \>+|\<br \/\>+|[\x{4e00}-\x{9fff}]+|[\x{0800}-\x{4e00}]+|[\x{AC00}-\x{D7A3}]+|[\x{4e00}-\x{9fa5}]+)/u', $value['art_content'], $art_content);
             if(empty($art_content[1])){continue;}
-            $art_contents = preg_replace(array('/<br\/>/u','/<br \/>/u','/<p><p>/u','/<\/p><\/p>/u','/\s/u','/nbspnbsp/u','/<p><br\/><\/p>/u','/<br\/>/u','/<p><\/p>/u'),array('</p><p>','</p><p>','<p>','</p>',''),'<p>'.implode('',$art_content[1]));
-            $art_contents = (mb_strlen($art_contents,'utf-8')>12048?mb_strcut($art_contents,0,12048,'utf-8'):$art_contents);
+            $art_content = preg_replace(array('/<br\/>/u','/<br \/>/u','/<p><p>/u','/<\/p><\/p>/u','/\s/u','/nbspnbsp/u','/<p><br\/><\/p>/u','/<br\/>/u','/<p><\/p>/u'),array('</p><p>','</p><p>','<p>','</p>',''),'<p>'.implode('',$art_content[1]));
+            $art_content = (mb_strlen($art_content,'utf-8')>12048?mb_strcut($art_content,0,12048,'utf-8'):$art_content);
+
             if(empty($value['art_time'])){continue;}
-            $art_addtime = strtotime(date('Y-m-d h:i:s',strtotime($value['art_time'])));
+            $art_addtime = strtotime($value['art_time']);
+
             preg_match_all('/([\x{4e00}-\x{9fff}]+)/u', trim($value['art_name']), $getPY);
             $getPY = !empty($getPY[1])?getPinyin(implode('',$getPY[1])):'G';
-            $data[] = '('.(intval($_GET['n'])+10).', \''.htmlspecialchars(trim($art_name),ENT_QUOTES).'\', \''.htmlspecialchars(trim($art_name),ENT_QUOTES).'\', \'\', \'\', \'\', \'\', \''.htmlspecialchars(trim($art_name),ENT_QUOTES).'\', \''.trim(fixHtml($art_contents)).'\', '.mt_rand(6050,9608).', '.mt_rand(5,9).', '.mt_rand(50,90).', '.mt_rand(500,900).', '.$art_addtime.', 1, 1, '.mt_rand(2080,4090).', '.mt_rand(10,40).', \'\', \''.$getPY.'\', '.$art_addtime.', \'\', \''.mt_rand(6,9).'.'.mt_rand(2,5).'\', '.mt_rand(3050,7608).')';
+
+            $data[] = '('.(intval($ltid[intval($_GET['n'])-1])).', \''.htmlspecialchars(trim($art_name),ENT_QUOTES).'\', \''.htmlspecialchars(trim($art_name),ENT_QUOTES).'\', \'\', \'\', \'\', \'\', \''.htmlspecialchars(trim($art_name),ENT_QUOTES).'\', \''.trim(fixHtml($art_content)).'\', '.mt_rand(6050,9608).', '.mt_rand(5,9).', '.mt_rand(50,90).', '.mt_rand(500,900).', '.$art_addtime.', 1, 1, '.mt_rand(2080,4090).', '.mt_rand(10,40).', \'\', \''.$getPY.'\', '.$art_addtime.', \'\', \''.mt_rand(6,9).'.'.mt_rand(2,5).'\', '.mt_rand(3050,7608).')';
         }
         if(!empty($data)&&is_array($data)) {
             $data = 'INSERT INTO `ff_news` (`news_cid`, `news_name`, `news_keywords`, `news_color`, `news_pic`, `news_inputer`, `news_reurl`, `news_remark`, `news_content`, `news_hits`, `news_hits_day`, `news_hits_week`, `news_hits_month`, `news_hits_lasttime`, `news_stars`, `news_status`, `news_up`, `news_down`, `news_jumpurl`, `news_letter`, `news_addtime`, `news_skin`, `news_gold`, `news_golder`) VALUES '.implode(',',$data).';';
-            //file_put_contents('xiaoshuo/xiaoshuo'.intval($_GET['n']).'.txt', $data.PHP_EOL, FILE_APPEND|LOCK_EX);
+            //file_put_contents('video/video'.$ltid[intval($_GET['n'])-1].'.txt', $data.PHP_EOL, FILE_APPEND|LOCK_EX);
             // 配置数据库连接
-            getInsert('127.0.0.1','root','root','root',$data);
+            //getInsert('127.0.0.1','root','root','root',$data);
         }
     }
-    $pid = (($sum+1)-intval($_GET['id']))>0?array((intval($_GET['id'])+1),intval($_GET['n'])):array(1,(intval($_GET['n'])+1));
-    echo '第 '.intval($_GET['id']).' 页 栏目 '.intval($_GET['n']).PHP_EOL.'<script>window.location.href="/xiaoshuo.php?id='.$pid[0].'&n='.$pid[1].'";</script>';
+    $pid = ((intval($_GET['id'])+1)>$sum)?array(1,intval($_GET['n'])+1):array((intval($_GET['id'])+1),intval($_GET['n']));
+    echo '第 '.intval($_GET['id']).' 页 栏目 '.intval($_GET['n']).PHP_EOL.'<script>window.location.href="/xiaos.php?id='.$pid[0].'&n='.$pid[1].'";</script>';
 }
 
 function getNews($cid = 1, $p = 1) {
-    $jsonVideo = getJson('https://lbapi9.com/api.php/provide/art/at/json/?ac=detail&t='.intval($cid).'&pg='.intval($p).'&h=&ids=&wd=',getRandIP());
+    $jsonVideo = getJson('https://www.khzyapi.com/api.php/provide/art/?ac=detail&ac=detail&t='.intval($cid).'&pg='.intval($p).'&h=&ids=&wd=',getRandIP());
     if(!empty($jsonVideo[1])&&$jsonVideo[1] == 200) {
         return json_decode($jsonVideo[0], true);
     }
     return '404';
 }
 
-function getInsert($host,$user,$passwd,$db,$sql){
+function getInsert($host, $user, $passwd, $db, $sql){
     try {
         $conn = new PDO('mysql:host='.$host.';dbname='.$db, $user, $passwd);
         $conn->query("set names utf8");
@@ -55,6 +61,55 @@ function getInsert($host,$user,$passwd,$db,$sql){
         echo $sql . "<br>" . $e->getMessage();exit();
     }
     $conn = null;
+}
+
+function code62($x) {
+    $show = '';
+    while($x > 0) {
+        $s = $x % 62;
+        if ($s > 35) {
+            $s = chr($s+61);
+        } elseif ($s > 9 && $s <=35) {
+            $s = chr($s + 55);
+        }
+        $show .= $s;
+        $x = floor($x/62);
+    }
+    return $show;
+}
+
+function shortUrl($url) {
+    $url = md5($url);
+    $url = crc32($url);
+    $result = sprintf("%u", $url);
+    return code62($result);
+}
+
+function fixHtml($srt){
+    $srt = preg_replace('/<[^>]*$/','',$srt);
+    preg_match_all('/<([a-z]+)(?: .*)?(?<![\/|\/ ])>/iU', $srt, $result);
+    if($result){
+        $opentags = $result[1];
+        preg_match_all('/<\/([a-z]+)>/iU', $srt, $result);
+        if($result){
+            $closetags = $result[1];
+            $len_opened = count($opentags);
+            if (count($closetags) == $len_opened) {
+                return $srt;  //没有未关闭标签
+            }
+            $opentags = array_reverse($opentags);
+            $sc = array('br','input','img','hr','meta','link');  //跳过这些标签
+            for ($i=0; $i < $len_opened; $i++) {
+                $ot = strtolower($opentags[$i]);
+                if (!in_array($opentags[$i], $closetags) && !in_array($ot,$sc)) {
+                    $srt .= '</'.$opentags[$i].'>';  //补齐标签
+                } else {
+                    unset($closetags[array_search($opentags[$i], $closetags)]);
+                }
+            }
+        }
+    }
+    return $srt;
 }
 
 function getJson($url, $randIP) {
@@ -121,32 +176,5 @@ function getPinyin($s0){
 	if($asc>=-12556 and $asc<=-11848)return "X";
 	if($asc>=-11847 and $asc<=-11056)return "Y";
 	if($asc>=-11055 and $asc<=-10247)return "Z";
-	return 0;//null
-}
-
-function fixHtml($srt){
-    $srt = preg_replace('/<[^>]*$/','',$srt);
-    preg_match_all('/<([a-z]+)(?: .*)?(?<![\/|\/ ])>/iU', $srt, $result);
-    if($result){
-        $opentags = $result[1];
-        preg_match_all('/<\/([a-z]+)>/iU', $srt, $result);
-        if($result){
-            $closetags = $result[1];
-            $len_opened = count($opentags);
-            if (count($closetags) == $len_opened) {
-                return $srt;  //没有未关闭标签
-            }
-            $opentags = array_reverse($opentags);
-            $sc = array('br','input','img','hr','meta','link');  //跳过这些标签
-            for ($i=0; $i < $len_opened; $i++) {
-                $ot = strtolower($opentags[$i]);
-                if (!in_array($opentags[$i], $closetags) && !in_array($ot,$sc)) {
-                    $srt .= '</'.$opentags[$i].'>';  //补齐标签
-                } else {
-                    unset($closetags[array_search($opentags[$i], $closetags)]);
-                }
-            }
-        }
-    }
-    return $srt;
+	return 0;
 }

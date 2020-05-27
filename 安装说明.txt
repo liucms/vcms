@@ -29,4 +29,4 @@ http://document.thinkphp.cn/manual_3_2.html
 
 2、本软件不得用于从事违反中国人民共和国相关法律所禁止的活动，影视导航系统对于用户擅自使用本软件从事违法活动不承担任何责任（包括但不限于刑事责任、行政责任、民事责任）。
 
-khzyapi|khzy6|ixxzy
+khzy6|?ac=detail&t=1&pg=2|ixxzy|?a=json&cid=6&p=1

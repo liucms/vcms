@@ -468,7 +468,7 @@ a.label-danger:hover,a.label-danger:focus {background-color:#c9302c;}
 .thumbnail-group > li > .thumbnail:hover .img > img {transform:scale(1.1);-webkit-transform:scale(1.1);}
 .thumbnail-group > li > .thumbnail .score {position:absolute;bottom:0;left:0;width:100%;height:46px;line-height:30px;padding:13px 10px 0 0;overflow:hidden;color:#fff;text-align:right;font-size:14px;background:url(../images/video-mask.png) 0 0 repeat-x;}
 .thumbnail-group > li .lang img {width:20px;height:20px;display:inline-block;margin-right:5px;border-radius:2px;}
-.thumbnail-group > li .lang {position:absolute;bottom:0;left:0;font-size:0;z-index:2;padding:7px;white-space:nowrap;}
+.thumbnail-group > li .lang {position:absolute;bottom:0;left:0;font-size:14px;color:#fff;z-index:2;padding:7px;white-space:nowrap;}
 .thumbnail-group > li .title {display:block;height:30px;line-height:30px;margin-top:5px;text-align:center;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
 .panel-body > .thumbnail-group > li .img {display:block;text-align:center;}
 /* thumbnail-group-lg */

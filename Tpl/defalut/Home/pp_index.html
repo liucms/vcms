@@ -62,12 +62,14 @@ $vod_hot_dy = ff_mysql_vod('limit:10;cid:1;order:vod_gold desc,vod_hits desc');<
                         <span class="img">
                             <img class="lazy" data-original="{$ppvod.vod_picurl}" src="{$tpl}static/images/no.jpg" alt="点击播放《{$ppvod.vod_name}》">
                             <span class="score">{$ppvod.vod_addtime|date='Y-m-d',###}</span>
-                            <span class="lang"></span>
+                            <span class="lang">{$ppvod.vod_language}</span>
                         </span>
                         <span class="title">{$ppvod.vod_name|msubstr=0,12}</span>
                         <div class="i-item-txt">
                             <div class="i-item-low ac">
                                 <em><i class="icon-star fl"></i>{$ppvod.vod_gold}</em>
+                                <b>·</b>
+                                <span>{$ppvod.vod_area}</span>
                                 <b>·</b>
                                 <span>{:getlistname($ppcid)}</span>
                             </div>

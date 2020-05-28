@@ -134,5 +134,30 @@ $vod_hot_dy = ff_mysql_vod('limit:10;cid:1;order:vod_gold desc,vod_hits desc');<
 </div>
 <include file="Home:pp_footer" />
 
+<script>
+$(function(){
+    var begin1=0;
+    var rollDom=$('.scroll');
+    var wideRoll=parseInt(rollDom.width());
+    var begin2=0;
+    var marquee=$('.marquee .p');
+    var wideMarquee=parseInt(marquee.width());
+    $('.marquee').append(marquee.clone(true));
+    var roll1=setInterval(function(){
+        begin1-=10;
+        rollDom.css({'margin-left': begin1+'px'});
+        if(-begin1>=wideRoll){
+            begin1=0;
+        }
+    },20);
+    var roll2=setInterval(function(){
+        begin2-=1;
+        marquee.css({'margin-left': begin2+'px'});
+        if(-begin2>=wideMarquee){
+            begin2=0;
+        }
+    },20);
+});
+</script>
 </body>
 </html>

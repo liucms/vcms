@@ -53,11 +53,6 @@
                             <php>$gold_desc = ff_mysql_news('cid:'.$list_id.';limit:6;order:news_up desc,news_addtime desc');</php>
                             <volist name="gold_desc" id="ppvod">
                             <li><a class="thumbnail" href="{$ppvod.news_readurl}">
-                                <span class="img">
-                                    <img class="lazy" data-original="{$ppvod.news_picurl}" src="{$tpl}static/images/no.jpg" alt="{$ppvod.news_name}" />
-                                    <span class="score">{$ppvod.news_addtime|date='Y-m-d',###}</span>
-                                    <span class="lang"></span>
-                                </span>
                                 <span class="title">{$ppvod.news_name|msubstr=0,12}</span>
                                 <div class="i-item-txt">
                                     <div class="i-item-low ac">

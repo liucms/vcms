@@ -83,6 +83,35 @@ $vod_hot_dy = ff_mysql_vod('limit:10;cid:1;order:vod_gold desc,vod_hits desc');<
             </fflist>
             <!--循环结束-->
         </div>
+        <div class="container">
+            <php>$cid_arr = array(11,12,13,14,15,16);</php>
+            <fflist name="cid_arr" id="ppcid" key="k">
+            <php>$gold_desc = ff_mysql_news('cid:'.$ppcid.';limit:12;order:news_addtime desc');</php>
+            <div class="panel">
+                <div class="panel-heading clearfix">
+                    <h3 class="panel-title panel-title-icon"><img class="icon" src="{$tpl}static/images/icon-news.png" alt="{:getlistname($ppcid)}">{:getlistname($ppcid)}</h3>
+                    <div class="panel-more"><a href="{:getlistname($ppcid,'list_url')}">更多<i class="iconfont">&#xe609;&#xe609;</i></a></div>
+                </div>
+                <div class="panel-body">
+                    <ul class="thumbnail-group thumbnail-group-sm clearfix">
+                        <volist name="gold_desc" id="ppvod">
+                        <li><a class="thumbnail" href="{$ppvod.news_readurl}">
+                            <span class="title">{$ppvod.news_name|msubstr=0,12}</span>
+                            <div class="i-item-txt">
+                                <div class="i-item-low ac">
+                                    <em><i class="icon-star fl"></i>{$ppvod.news_gold}</em>
+                                    <b>·</b>
+                                    <span>{:getlistname($ppcid)}</span>
+                                </div>
+                            </div>
+                        </a></li>
+                        </volist>
+
+                    </ul>
+                </div>
+            </div>
+            </fflist>
+        </div>
     </div>
     <div class="container">
         <div class="link">

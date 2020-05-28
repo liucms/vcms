@@ -47,11 +47,6 @@
                             <notempty name="news_list">
                             <volist name="news_list" id="ppvod">
                             <li><a class="thumbnail" href="{$ppvod.news_readurl}">
-                                <span class="img">
-                                    <img class="lazy" data-original="{$ppvod.news_picurl}" src="{$tpl}static/images/no.jpg" alt="{$ppvod.news_name}">
-                                    <span class="score">{$ppvod.news_addtime|date='Y-m-d',###}</span>
-                                    <span class="lang"></span>
-                                </span>
                                 <span class="title">{$ppvod.news_name}</span>
                                 <div class="i-item-txt">
                                     <div class="i-item-low ac">

@@ -58,7 +58,14 @@
                     </volist>
 
                 </div>
-
+                <div class="panel">
+                    <div class="panel-heading clearfix">
+                        <h3 class="panel-title panel-title-icon"><img class="icon" src="{$tpl}static/images/icon-news.png" alt="">剧情简介</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="read-content">{:ff_content_url($vod_content,$Tag,2)}</div>
+                    </div>
+                </div>
                 <div class="panel">
                     <div class="panel-heading clearfix">
                         <h3 class="panel-title panel-title-icon"><img class="icon" src="{$tpl}static/images/icon-cnxh.png" alt="">猜你喜欢 {$list_name}</h3>

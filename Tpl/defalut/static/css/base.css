@@ -519,7 +519,7 @@ a.label-danger:hover,a.label-danger:focus {background-color:#c9302c;}
 .player-hot .thumbnail-group-lg > li .title {position:absolute;left:50px;right:50px;bottom:5px;z-index:3;color:#fff;width:auto;margin:0;}
 /* pageFloat */
 .pageFloat .btn {margin:5px;width:auto;}
-.pageFloat {position:fixed;left:0;right:0;bottom:0;color:#fff;text-align:center;white-space:nowrap;font-size:16px;background-color:rgba(0,0,0,.75); z-index:10;}
+.pageFloat {position:fixed;max-width:1380px;margin:auto;left:0;right:0;bottom:0;color:#fff;text-align:center;white-space:nowrap;font-size:16px;background-color:rgba(0,0,0,.75); z-index:10;}
 .pageFloat img{width:100%; min-height:70px;}
 .pageFloat .close{display:block;position:absolute;right:0;top:0;left:unset;width:3em;height:1.5em;line-height:1.5em;z-index:100;font-size:.8em;background:none;text-align:center;background:rgba(231, 7, 115);color:white;}
 /* pageIndex */

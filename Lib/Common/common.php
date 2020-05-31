@@ -836,7 +836,7 @@ function ff_content_url($content,$array_tag='',$sid=''){
 			$content = str_replace($value['tag_name'],'<a href="'.ff_tag_url($value['tag_name'],$sid).'">'.$value['tag_name'].'</a>',$content);
 		}
 	}
-	return $content;
+	return preg_replace('/<\/p>/','</p>'.PHP_EOL,$content);
 }
 // 自定义模板链接
 function ff_mytpl_url($tplname){

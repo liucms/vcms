@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS ff_admin (
   admin_email varchar(40) NOT NULL,
   admin_logintime int(11) NOT NULL,
   PRIMARY KEY  (admin_id)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 INSERT INTO ff_admin (admin_id, admin_name, admin_pwd, admin_count, admin_ok, admin_del, admin_ip, admin_email, admin_logintime) VALUES
 (1, 'admin', '438cff22fc9313a8d3aaa96c4aa891bb', 0, '1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1', 0, '127.0.0.1', 'admin@qq.com', 1311954804);
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS ff_ads (
   ads_name varchar(50) NOT NULL,
   ads_content text NOT NULL,
   PRIMARY KEY  (ads_id)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 INSERT INTO `ff_ads` (`ads_id`, `ads_name`, `ads_content`) VALUES
 (1, 'pageVod', '扩展工具>网站广告管理>pageVod'),
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS ff_cm (
   cm_addtime int(11) NOT NULL,
   cm_status tinyint(1) NOT NULL default '0',
   PRIMARY KEY cm_id (cm_id)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS ff_gb (
   gb_id mediumint(8) unsigned NOT NULL auto_increment,
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS ff_gb (
   gb_oid tinyint(1) NOT NULL default '0',
   gb_status tinyint(1) NOT NULL default '0',
   PRIMARY KEY  (gb_id)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 CREATE TABLE IF NOT EXISTS ff_link (
   link_id tinyint(4) unsigned NOT NULL auto_increment,
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS ff_link (
   link_order tinyint(4) NOT NULL,
   link_type tinyint(1) NOT NULL,
   PRIMARY KEY  (link_id)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 CREATE TABLE IF NOT EXISTS ff_list (
   list_id smallint(6) unsigned NOT NULL AUTO_INCREMENT,
@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS ff_list (
   list_description varchar(255) NOT NULL,
   list_jumpurl varchar(150) NOT NULL,
   PRIMARY KEY (list_id)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 INSERT INTO ff_list (list_id, list_pid, list_oid, list_sid, list_name, list_skin, list_skin_detail, list_skin_play, list_skin_type, list_dir, list_status, list_keywords, list_title, list_description, list_jumpurl) VALUES
 (16, 2, 16, 2, '科学幻想', 'pp_newslist', 'pp_news', 'pp_play', 'pp_vodtype', 'huanxiang', 1, '', '', '', ''),
@@ -139,7 +139,7 @@ CREATE TABLE IF NOT EXISTS ff_news (
   KEY news_down (news_down),
   KEY news_gold (news_gold),
   KEY news_hits (news_hits,news_cid)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 CREATE TABLE IF NOT EXISTS ff_slide (
   slide_id tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
@@ -152,7 +152,7 @@ CREATE TABLE IF NOT EXISTS ff_slide (
   slide_content varchar(255) NOT NULL,
   slide_status tinyint(1) NOT NULL,
   PRIMARY KEY (slide_id)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 CREATE TABLE IF NOT EXISTS ff_special (
   special_id mediumint(8) unsigned NOT NULL auto_increment,
@@ -177,14 +177,14 @@ CREATE TABLE IF NOT EXISTS ff_special (
   special_gold decimal(3,1) NOT NULL,
   special_golder smallint(6) NOT NULL,
   PRIMARY KEY  (special_id)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 CREATE TABLE IF NOT EXISTS ff_topic (
   topic_did mediumint(9) NOT NULL,
   topic_tid smallint(6) NOT NULL,
   topic_sid tinyint(1) NOT NULL,
   topic_oid smallint(3) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS ff_user (
   user_id mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
@@ -206,7 +206,7 @@ CREATE TABLE IF NOT EXISTS ff_user (
   user_email varchar(50) NOT NULL,
   user_face varchar(50) NOT NULL,
   PRIMARY KEY (user_id)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 INSERT INTO ff_user (user_id, user_name, user_pwd, user_money, user_staus, user_pay, user_question, user_answer, user_type, user_logip, user_lognum, user_logtime, user_joinip, user_jointime, user_duetime, user_qq, user_email, user_face) VALUES
 (1, '游客', 'bdadsfsaewtgsdgfdsghdsafsa', 1, 1, 1, '1', '1', 1, '127.0.0.1', 1, 1, '127.0.0.1', 12345678, 12345678, '10000', '10000@qq.com', '');
@@ -217,13 +217,13 @@ CREATE TABLE IF NOT EXISTS ff_view (
   view_uid mediumint(8) NOT NULL,
   view_addtime int(10) NOT NULL,
   PRIMARY KEY (view_id)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 CREATE TABLE IF NOT EXISTS ff_tag (
   tag_id mediumint(8) NOT NULL,
   tag_sid tinyint(1) NOT NULL,
   tag_name varchar(50) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS ff_vod (
   vod_id mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
@@ -273,4 +273,4 @@ CREATE TABLE IF NOT EXISTS ff_vod (
   KEY vod_addtime (vod_addtime,vod_cid),
   KEY vod_hits (vod_hits,vod_cid),
   KEY vod_gold (vod_gold)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
